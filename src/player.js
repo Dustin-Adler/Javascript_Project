@@ -4,30 +4,22 @@ class Player {
 
     constructor(ctx, canvas) {
         this.mcSprite = new Image();
-        this.sourceSprite = this.mcSprite.src = "./Assets/tileset/mcMasterSheet.png";
+        this.mcSprite.src = "./Assets/tileset/mcMasterSheet.png";
         this.ctx = ctx;
         this.w = 16; 
         this.h = 17; 
         this.x = 120;  
-        this.y = 48; 
-        this.speed = 5;  
+        this.y = 200; 
+        this.speed = 4;  
         this.dx =  0; 
         this.dy = 0; 
         this.canvas = canvas;
-        // this.keyDown = this.keyDown.bind(this);
-        // this.keyUP = this.keyUp.bind(this);
+        this.keyDown = this.keyDown.bind(this);
+        this.keyUp = this.keyUp.bind(this);
         this.keys = [];
+        this.lastInput = "up";
+        this.moving = false;
     }
-
-    // listeners(){
-    //     document.addEventListener('keydown', this.keyDown);
-    //     document.addEventListener('keyup', this.keyUp);
-    // }
-
-    // let lastButtonPressed = "up";
-    // let animationCounter = 0;
-    // let currentAnimation = 0;
-    // let animationSpeed = 10;
 
     draw(img, sx, sy, sw, sh, dx, dy, dw, dh) {
         this.ctx.drawImage( img, sx, sy, sw, sh, dx, dy, dw, dh)
@@ -35,37 +27,65 @@ class Player {
 
     update() {
         this.draw(this.mcSprite, this.dx * this.w, this.dy * this.h, this.w, this.h, this.x, this.y, this.w, this.h);
+        this.move();
+        this.animationFrame();
     }
 
     keyDown(e) {
         this.keys[e.keyCode] = true;
+        this.moving = true;
     }
 
     keyUp(e){
-        if (this.keys[e.keyCode]){
-            delete this.keys[e.keyCode];
-        }
+        delete this.keys[e.keyCode];
+        this.moving = false;
     }
 
     move(){
-        if (key[38] && this.y > 32) {
+        if (this.keys[38] && this.y > 32) {
             this.y -= this.speed;
+            this.lastInput = "up"
             this.dy = 0
-        }
-         if(key[40] && this.y < (240 - 32)) {
+        } 
+         if(this.keys[40] && this.y < (240 - 32) - this.h) {
             this.y += this.speed;
+            this.lastInput = "down"
             this.dy = 3
-        }
-        if(key[39] && this.x < (256 - 16)) {
+        } 
+        if(this.keys[39] && this.x < (256 - 16) - this.w) {
             this.x += this.speed;
+            this.lastInput = "right"
             this.dy = 1
-        }
-        if(key[37] && this.x > 16) {
+        } 
+        if(this.keys[37] && this.x > 16) {
             this.x -= this.speed;
+            this.lastInput = "left"
             this.dy = 2
-        }
+        } 
     } 
 
+    animationFrame(){
+        if (this.moving) {
+            if (this.dx < 5) this.dx++
+            else this.dx = 0
+        } else if (this.lastInput === "up") {
+            this.dy = 4;
+            if (this.dx < 5) this.dx++
+            else this.dx = 0
+        } else if (this.lastInput === "right") {
+            this.dy = 5;
+            if (this.dx < 5) this.dx++;
+            else this.dx = 0;
+        } else if (this.lastInput === "left") {
+            this.dy = 6;
+            if (this.dx < 5) this.dx++
+            else this.dx = 0
+        } else if (this.lastInput === "down") {
+            this.dy = 7;
+            if (this.dx < 5) this.dx++
+            else this.dx = 0
+        }
+    }
 } 
 
 export default Player;

@@ -1,5 +1,5 @@
 import Game from "./game";
-import Player from "./player"
+// import Player from "./player"
 
 addEventListener('DOMContentLoaded', function() {
     const game = new Game();
