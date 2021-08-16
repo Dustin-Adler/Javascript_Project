@@ -1,110 +1,73 @@
 
-    const mcSprite = new Image();
-    mcSprite.src = "./Assets/mc/Idle/Char2_idle_down.png"
 
 class Player {
 
-    constructor() {
-        this.w = 16, 
-        this.h = 16, 
-        this.x = 120, 
-        this.y = 48, 
-        this.speed = 5, 
-        this.dx =  0, 
-        this.dy = 0, 
-        this.document.addEventListener('keydown', keyDown);
-        this.document.addEventListener('keyup', keyUp);
+    constructor(ctx, canvas) {
+        this.mcSprite = new Image();
+        this.sourceSprite = this.mcSprite.src = "./Assets/tileset/mcMasterSheet.png";
+        this.ctx = ctx;
+        this.w = 16; 
+        this.h = 17; 
+        this.x = 120;  
+        this.y = 48; 
+        this.speed = 5;  
+        this.dx =  0; 
+        this.dy = 0; 
+        this.canvas = canvas;
+        // this.keyDown = this.keyDown.bind(this);
+        // this.keyUP = this.keyUp.bind(this);
+        this.keys = [];
     }
+
+    // listeners(){
+    //     document.addEventListener('keydown', this.keyDown);
+    //     document.addEventListener('keyup', this.keyUp);
+    // }
 
     // let lastButtonPressed = "up";
     // let animationCounter = 0;
     // let currentAnimation = 0;
     // let animationSpeed = 10;
 
-    drawMC() {
-        ctx.drawImage(mcSprite, 0, 0, player.w, player.h, player.x, player.y, player.w, player.h)
-    }
-
-    clear() {
-        clearRect(0, 0, canvas.width, canvas.height)
-    }
-
-    newPos() {
-        player.x += player.dx;
-        player.y += player.dy;
-        detectWalls();
-    }
-
-    detectWalls() {
-        if (player.x < 16) {
-            player.x = 16
-        }
-
-        if (player.x + player.w > canvas.width +16) {
-            player.x = canvas.width - player.w - 16;
-        }
-
-        if (player.y < 32) {
-            player.y = 32;
-        }
-
-        if (player.y + player.h > canvas.height - 32) {
-            player.y = canvas.height - player.h -32;
-        }
+    draw(img, sx, sy, sw, sh, dx, dy, dw, dh) {
+        this.ctx.drawImage( img, sx, sy, sw, sh, dx, dy, dw, dh)
     }
 
     update() {
-        clear();
-        drawPlayer();
-        newPos();
-        requestAnimationFrame(update);
+        this.draw(this.mcSprite, this.dx * this.w, this.dy * this.h, this.w, this.h, this.x, this.y, this.w, this.h);
     }
 
-    moveUp() {
-        player.y -= player.speed;
-    }
-    moveDown() {
-        player.y += player.speed;
-    }
-    moveRight() {
-        player.x += player.speed;
-    }
-    moveLeft() {
-        player.x -= player.speed;
-    }
-
-    keyDown(e){
-        if (e.key === 'ArrowRight' || e.key === 'Right'){
-            moveRight();
-        } else if (e.key === 'ArrowLeft' || e.key === 'Left'){
-            moveLeft();
-        } else if (e.key === 'ArrowUp' || e.key === 'Up'){
-            moveUp();
-        } else if (e.key === 'ArrowDown' || e.key === 'Down'){
-            moveDown();
-        }
+    keyDown(e) {
+        this.keys[e.keyCode] = true;
     }
 
     keyUp(e){
-        if (
-            e.key == 'Right' ||
-            e.key == 'ArrowRight' ||
-            e.key == 'Left' ||
-            e.key == 'ArrowLeft' ||
-            e.key == 'Down' ||
-            e.key == 'ArrowDown' ||
-            e.key == 'Up' ||
-            e.key == 'ArrowUp'
-        ) {
-            player.dx = 0;
-            player.dy = 0;
+        if (this.keys[e.keyCode]){
+            delete this.keys[e.keyCode];
         }
     }
 
-    update();
+    move(){
+        if (key[38] && this.y > 32) {
+            this.y -= this.speed;
+            this.dy = 0
+        }
+         if(key[40] && this.y < (240 - 32)) {
+            this.y += this.speed;
+            this.dy = 3
+        }
+        if(key[39] && this.x < (256 - 16)) {
+            this.x += this.speed;
+            this.dy = 1
+        }
+        if(key[37] && this.x > 16) {
+            this.x -= this.speed;
+            this.dy = 2
+        }
+    } 
 
 } 
 
-module.exports = Player;
+export default Player;
 
 
