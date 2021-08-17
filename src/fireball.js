@@ -1,6 +1,6 @@
 class Fireball {
 
-    constructor(ctx, canvas, startX, startY, targetX, targetY){
+    constructor(ctx, canvas, startX, startY, targetX, targetY) {
         this.fireball = new Image();
         this.fireball.src = "./Assets/tileset/fireballs.png";
         this.ctx = ctx;
@@ -13,8 +13,13 @@ class Fireball {
         this.targetY = targetY;
         this.dx = 0;
         this.dy = 0;
+        this.velocityX = 1;
+        this.velocityY = 4;
         this.animationCount = 0;
-        // this.speed = 3;
+    }
+
+    draw(img, sx, sy, sw, sh, dx, dy, dw, dh) {
+        this.ctx.drawImage( img, sx, sy, sw, sh, dx, dy, dw, dh)
     }
 
     drawFireBall(){
@@ -23,23 +28,19 @@ class Fireball {
         this.y, this.w, this.h )
     }
 
+    getVelocity(){
+        // const angle = Math.atan2( this.targetY - this.y, this.targetX - this.x)
+        // this.velocityX = Math.cos(angle)/10
+        // this.velocityY = Math.sin(angle)/4
+        
+        const x = [-2, -1, 0, 1, 2]
+        this.velocityX = x[Math.floor(Math.random() * 5)]
+        this.velocityY = 5
+    }
+
     moveFireBall(){ 
-        // let adj, opp, angle;
-        // if (this.x > this.targetX) {
-        //     opp = this.x - this.targetX;
-        // } else {
-        //     opp = this.targetX - this.x;
-        // }
-
-        // if (this.y > this.targetY) {
-        //     adj = this.y - this.targetY;
-        // } else {
-        //     adj = this.targetY - this.y;
-        // }
-        angle = Math.atan2(this.targetY - this.y, this.targetX - this.x)  
-        this.x += this.x + Math.cos(angle),
-        this.y += this.y + Math.sin(angle)
-
+        this.x += this.velocityX;
+        this.y += this.velocityY;
     }
 
     animateFireball() {
@@ -53,10 +54,13 @@ class Fireball {
             this.animationCount = 0;
         }
     }
-    
+
     update(){
+        this.drawFireBall();
         this.moveFireBall();
         this.animateFireball();
-        this.drawFireBall();
+        this.getVelocity();
     }
 }
+
+export default Fireball;

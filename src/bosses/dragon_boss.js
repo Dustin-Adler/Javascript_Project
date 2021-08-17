@@ -1,15 +1,16 @@
 // import Player from "../player";
+import Fireball from "../fireball";
 
 class Dragon {
 
-    constructor(ctx, canvas, player) {
-        this.player = player;
-        this.targetX = this.player.x;
-        this.targetY = this.player.y
+    constructor(ctx, canvas ) {
+        this.targetX = 121
+        this.targetY = 80
         this.dragon = new Image();
         this.dragon.src = "./Assets/tileset/dragon.png";
         this.ctx = ctx;
         this.canvas = canvas;
+        this.fireballs = []
         this.body = {
             w: 24,  
             h: 32,  
@@ -131,17 +132,19 @@ class Dragon {
         this.neck['y'], this.neck['w'], this.neck['h'] )
     }
 
+    shootFireballs(){
+        const heads = [this.head1, this.head2, this.head3]
+        let head = heads[Math.floor((Math.random() * 3)) ]
+        const fireball = new Fireball(this.ctx, this.canvas, head.x + 3, head.y + 16, this.targetX, this.targetY )
+        this.fireballs.push(fireball)
+    }
+
     moveDeadHeads() {
 
     }
 
-
-
-
     animationFrames(){
         this.bodyAnimation();
-        // if (this.deadHead['dx'] < 1 ) this.fireball['dx']++;
-        // else this.deadHead['dx'] = 0;
     }
 
     update() {
@@ -152,8 +155,10 @@ class Dragon {
         this.moveHead1();
         this.moveHead2();
         this.moveHead3();
-        
-        // this.move();
+        this.shootFireballs();
+        this.fireballs.forEach((fireball) => {
+            fireball.update();
+        })
         this.animationFrames();
     }
 }
