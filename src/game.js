@@ -1,5 +1,6 @@
 import MapLayouts from "./dungeonMaps";
 import Player from "./player";
+import Dragon from "./bosses/dragon_boss"
 
 class Game {
     constructor() {
@@ -7,14 +8,14 @@ class Game {
         this.width = this.canvas.width = 256;
         this.height = this.canvas.height = 240;
         this.ctx = this.canvas.getContext('2d');
-        this.fps = 20;
+        this.fps = 60;
         this.roomTiles = new Image();
         this.roomTiles.src = "./Assets/tileset/roomTiles.png";
         this.maps = new MapLayouts();
         this.currentMap = this.maps.bossChamber
         this.draw = this.draw.bind(this)
         this.player = new Player(this.ctx, this.canvas)
-       
+        this.dragon = new Dragon(this.ctx, this.canvas, this.player)
     }
 
     listeners(){
@@ -28,6 +29,7 @@ class Game {
             this.ctx.clearRect(0,0,this.width,this.height);
             this.createMap();
             this.player.update();
+            this.dragon.update();
             requestAnimationFrame(this.draw);
         }, 1000 / this.fps );
     }

@@ -9,10 +9,11 @@ class Player {
         this.w = 16; 
         this.h = 17; 
         this.x = 120;  
-        this.y = 200; 
-        this.speed = 4;  
+        this.y = 191; 
+        this.speed = 2;  
         this.dx =  0; 
         this.dy = 0; 
+        this.animationCount = 0;
         this.canvas = canvas;
         this.keyDown = this.keyDown.bind(this);
         this.keyUp = this.keyUp.bind(this);
@@ -66,24 +67,59 @@ class Player {
 
     animationFrame(){
         if (this.moving) {
-            if (this.dx < 5) this.dx++
-            else this.dx = 0
+            if (this.animationCount < 4) {
+                this.animationCount++;
+            } else if (this.dx < 5) {
+                this.dx++
+                this.animationCount = 0;
+            } else {
+                this.dx = 0;
+                this.animationCount = 0;
+            } 
         } else if (this.lastInput === "up") {
             this.dy = 4;
-            if (this.dx < 5) this.dx++
-            else this.dx = 0
+            if (this.animationCount < 4) {
+                this.animationCount++;
+            } else if (this.dx < 5) {
+                this.dx++
+                this.animationCount = 0;
+            } else {
+                this.dx = 0;
+                this.animationCount = 0;
+            } 
         } else if (this.lastInput === "right") {
             this.dy = 5;
-            if (this.dx < 5) this.dx++;
-            else this.dx = 0;
+            if (this.animationCount < 4) {
+                this.animationCount++;
+            } else if (this.dx < 5) {
+                this.dx++
+                this.animationCount = 0;
+            } else {
+                this.dx = 0;
+                this.animationCount = 0;
+            }
         } else if (this.lastInput === "left") {
             this.dy = 6;
-            if (this.dx < 5) this.dx++
-            else this.dx = 0
+            if (this.animationCount < 4) {
+                this.animationCount++;
+            } else if (this.dx < 5) {
+                this.dx++
+                this.animationCount = 0;
+            } else {
+                this.dx = 0;
+                this.animationCount = 0;
+            }
         } else if (this.lastInput === "down") {
             this.dy = 7;
-            if (this.dx < 5) this.dx++
-            else this.dx = 0
+            if (this.animationCount < 4) {
+                this.animationCount++;
+            } else if (this.dx < 5) {
+                this.dx++
+                this.animationCount = 0;
+            } else {
+                this.dx = 0;
+                this.animationCount = 0;
+            }
         }
     }
 } 
