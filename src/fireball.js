@@ -29,13 +29,9 @@ class Fireball {
     }
 
     getVelocity(){
-        // const angle = Math.atan2( this.targetY - this.y, this.targetX - this.x)
-        // this.velocityX = Math.cos(angle)/10
-        // this.velocityY = Math.sin(angle)/4
-        
-        const x = [-2, -1, 0, 1, 2]
-        this.velocityX = x[Math.floor(Math.random() * 5)]
-        this.velocityY = 5
+        const angle = Math.atan2( this.targetY - this.y, this.targetX - this.x)
+        this.velocityX = Math.cos(angle)
+        this.velocityY = Math.sin(angle)
     }
 
     moveFireBall(){ 
@@ -59,7 +55,6 @@ class Fireball {
         this.drawFireBall();
         this.moveFireBall();
         this.animateFireball();
-        this.getVelocity();
     }
 }
 

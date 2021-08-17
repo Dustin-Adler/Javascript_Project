@@ -30,6 +30,8 @@ class Game {
             this.createMap();
             this.player.update();
             this.dragon.update();
+            this.dragon.targetX = this.player.x
+            this.dragon.targetY = this.player.y
             requestAnimationFrame(this.draw);
         }, 1000 / this.fps );
     }

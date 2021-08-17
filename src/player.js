@@ -5,6 +5,14 @@ class Player {
     constructor(ctx, canvas) {
         this.mcSprite = new Image();
         this.mcSprite.src = "./Assets/tileset/mcMasterSheet.png";
+        this.left_right_attack = new Image();
+        this.left_right_attack.src = "./Assets/tileset/right-left-atk.png"
+        this.up_down_attack = new Image();
+        this.up_down_attack.src = "./Assets/tileset/up-down-atk.png"
+        this.hitBoxOnAttack = new Image();
+        this.hitBoxOnAttack.src = "";
+        this.hurtBoxOnAttack = new Image();
+        this.hurtBoxOnAttack.src = "";
         this.ctx = ctx;
         this.w = 16; 
         this.h = 17; 
@@ -20,14 +28,24 @@ class Player {
         this.keys = [];
         this.lastInput = "up";
         this.moving = false;
+        this.attacking = false;
     }
 
-    draw(img, sx, sy, sw, sh, dx, dy, dw, dh) {
-        this.ctx.drawImage( img, sx, sy, sw, sh, dx, dy, dw, dh)
-    }
+    draw() {
+        if (this.attacking && (this.lastInput === "down"|| this.lastInput === "up")){
+            if (this.lastInput === "down") this.ctx.drawImage( this.up_down_attack, this.dx * 23, this.dy * 23, 23, 23, this.x, this.y, 23, 23)
+            else this.ctx.drawImage( this.up_down_attack, this.dx * 23, this.dy * 23, 23, 23, (this.x - 8) , (this.y - 8), 23, 23)
 
+        } else if (this.attacking && (this.lastInput === "left" || this.lastInput === "right")) {
+            this.ctx.drawImage( this.left_right_attack, this.dx * this.w, this.dy * 21, this.w, 21, this.x, this.y, this.w, 21)
+
+        } else {
+            this.ctx.drawImage( this.mcSprite, this.dx * this.w, this.dy * this.h, this.w, this.h, this.x, this.y, this.w, this.h)
+        }
+    }
+    
     update() {
-        this.draw(this.mcSprite, this.dx * this.w, this.dy * this.h, this.w, this.h, this.x, this.y, this.w, this.h);
+        this.draw();
         this.move();
         this.animationFrame();
     }
@@ -40,6 +58,7 @@ class Player {
     keyUp(e){
         delete this.keys[e.keyCode];
         this.moving = false;
+        this.attacking = false
     }
 
     move(){
@@ -63,7 +82,25 @@ class Player {
             this.lastInput = "left"
             this.dy = 2
         } 
+        if(this.keys[32] && this.lastInput === "up"){
+            this.dy = 1;
+            this.attacking = true;
+        }
+        if(this.keys[32] && this.lastInput === "down"){
+            this.dy = 0;
+            this.attacking = true;
+        }
+        if(this.keys[32] && this.lastInput === "right"){
+            this.dy = 0;
+            this.attacking = true;
+        }
+        if(this.keys[32] && this.lastInput === "left"){
+            this.dy = 1;
+            this.attacking = true;
+        }
     } 
+
+
 
     animationFrame(){
         if (this.moving) {
@@ -76,7 +113,51 @@ class Player {
                 this.dx = 0;
                 this.animationCount = 0;
             } 
-        } else if (this.lastInput === "up") {
+        } else if (this.attacking && this.lastInput === "up"){
+            this.dy = 1;
+            if (this.animationCount < 1) {
+                this.animationCount++;
+            } else if (this.dx < 5) {
+                this.dx++
+                this.animationCount = 0;
+            } else {
+                this.dx = 0;
+                this.animationCount = 0;
+            } 
+        } else if (this.attacking && this.lastInput === "down"){
+            this.dy = 0;
+            if (this.animationCount < 1) {
+                this.animationCount++;
+            } else if (this.dx < 5) {
+                this.dx++
+                this.animationCount = 0;
+            } else {
+                this.dx = 0;
+                this.animationCount = 0;
+            } 
+        } else if (this.attacking && this.lastInput === "left"){
+            this.dy = 1;
+            if (this.animationCount < 1) {
+                this.animationCount++;
+            } else if (this.dx < 5) {
+                this.dx++
+                this.animationCount = 0;
+            } else {
+                this.dx = 0;
+                this.animationCount = 0;
+            } 
+        } else if (this.attacking && this.lastInput === "right"){
+            this.dy = 0;
+            if (this.animationCount < 1) {
+                this.animationCount++;
+            } else if (this.dx < 5) {
+                this.dx++
+                this.animationCount = 0;
+            } else {
+                this.dx = 0;
+                this.animationCount = 0;
+            } 
+        }else if (this.lastInput === "up") {
             this.dy = 4;
             if (this.animationCount < 4) {
                 this.animationCount++;

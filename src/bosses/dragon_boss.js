@@ -11,6 +11,7 @@ class Dragon {
         this.ctx = ctx;
         this.canvas = canvas;
         this.fireballs = []
+        this.fireballInterval = 0
         this.body = {
             w: 24,  
             h: 32,  
@@ -132,10 +133,11 @@ class Dragon {
         this.neck['y'], this.neck['w'], this.neck['h'] )
     }
 
-    shootFireballs(){
+    shootFireballs(){ 
         const heads = [this.head1, this.head2, this.head3]
         let head = heads[Math.floor((Math.random() * 3)) ]
-        const fireball = new Fireball(this.ctx, this.canvas, head.x + 3, head.y + 16, this.targetX, this.targetY )
+        const fireball = new Fireball(this.ctx, this.canvas, head.x + 3, head.y + 16, (this.targetX + 8), (this.targetY + 8) )
+        fireball.getVelocity();
         this.fireballs.push(fireball)
     }
 
@@ -148,6 +150,7 @@ class Dragon {
     }
 
     update() {
+        const that = this
         this.drawBody();
         this.drawHeads(this.head1);
         this.drawHeads(this.head2);
@@ -155,9 +158,17 @@ class Dragon {
         this.moveHead1();
         this.moveHead2();
         this.moveHead3();
-        this.shootFireballs();
-        this.fireballs.forEach((fireball) => {
+        if (this.fireballInterval < 30){
+            this.fireballInterval++
+        } else {
+            this.shootFireballs();
+            this.fireballInterval = 0;
+        }
+        // 
+        this.fireballs.forEach((fireball, i) => {
             fireball.update();
+            if (fireball.x > 232 || fireball.x < 16) this.fireballs.splice(i, 1);
+            if (fireball.y > 198 || fireball.y < 32) this.fireballs.splice(i, 1);
         })
         this.animationFrames();
     }
