@@ -1,6 +1,7 @@
+import Dragon from "./bosses/dragon_boss";
 import MapLayouts from "./dungeonMaps";
 import Player from "./player";
-import Dragon from "./bosses/dragon_boss";
+import Items from "./items";
 import Util from "./util";
 import Ui from "./ui";
 
@@ -17,14 +18,32 @@ class Game {
         this.currentMap = this.maps.bossChamber
         this.draw = this.draw.bind(this)
         this.player = new Player(this.ctx, this.canvas)
-        this.dragon = new Dragon(this.ctx, this.canvas, this.player)
+        this.dragon = new Dragon(this.ctx, this.canvas)
+        this.items = new Items(this.ctx, this.canvas)
         this.ui = new Ui(this.ctx, this.canvas)
         this.util = new Util
+        this.enemies = [this.dragon]
+    }
+
+    dropHearContainer(){
+        if (!this.enemies.length) {
+            this.items.heartContainer(120, 112)
+        }
     }
 
     listeners(){
         window.addEventListener("keydown", this.player.keyDown.bind(this));
         window.addEventListener("keyup", this.player.keyUp.bind(this));
+    }
+
+    handleEnemies(){
+        this.enemies.forEach((enemy, i) => {
+            if (!enemy.alive) {
+                this.enemies.splice(i, 1)
+            } else {
+                enemy.update(this.player, this.util);
+            }
+        })
     }
 
     draw() {
@@ -33,24 +52,18 @@ class Game {
             this.ctx.clearRect(0,0,this.width,this.height);
             this.createMap();
             this.player.update();
-            this.dragon.update(this.player);
+            this.items.update();
             this.ui.update(this.player);
-            this.handleFireballs()
-            this.handlePlayerAttack()
+            this.handleEnemies();
+            this.handleFireballs();
+            this.handleEnemies();
+            // this.handlePlayerAttack()
             requestAnimationFrame(this.draw);
         }, 1000 / this.fps );
     }
 
     handlePlayerAttack() {
-        if (this.player.attacking){
-            this.dragon.liveHeads.forEach((head) => {
-                if (this.util.collision(head, this.player.hurtBox)){
-                    head.health--;
-                    console.log(head.name);
-                    console.log(head.health);
-                }
-            })
-        } 
+
     }
 
     handleFireballs(){
@@ -58,15 +71,12 @@ class Game {
             fireball.update();
             if (this.util.collision(fireball, this.player)) {
                 this.player.health++;
-                // should only move player if it won't push them though a wall.
-                // if (this.player.x + Math.floor(fireball.velocityX * 4) < (240 - this.player.w) &&
-                //     this.player.x + Math.floor(fireball.velocityX * 4) > 16 &&
-                //     this.player.y + Math.floor(fireball.velocityY * 4) > 208 - this.player.h &&
-                //     this.player.y + Math.floor(fireball.velocityY * 4) < 32) {
-                //             this.player.x += (Math.floor(fireball.velocityX * 4));
-                //             this.player.y += (Math.floor(fireball.velocityY * 4));}
-                // this.player.x += (Math.floor(fireball.velocityX * 4));
-                // this.player.y += (Math.floor(fireball.velocityY * 4));
+                if (this.player.x + Math.floor(fireball.velocityX * 4) < (240 - this.player.w) &&
+                    this.player.x + Math.floor(fireball.velocityX * 4) > 16 &&
+                    this.player.y + Math.floor(fireball.velocityY * 4) < 208 - this.player.h &&
+                    this.player.y + Math.floor(fireball.velocityY * 4) > 32) {
+                            this.player.x += (Math.floor(fireball.velocityX * 4));
+                            this.player.y += (Math.floor(fireball.velocityY * 4));}
                 this.dragon.fireballs.splice(i, 1);
             }
             if (fireball.x > 232 || fireball.x < 16) this.dragon.fireballs.splice(i, 1);

@@ -14,7 +14,6 @@ class Util {
             return true;
         }
     }
-
 }
 
 export default Util;

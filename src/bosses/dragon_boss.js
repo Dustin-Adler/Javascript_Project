@@ -33,6 +33,8 @@ class Dragon {
             radius: 14,
             radians: 0,
             velocity: 0.05,
+            velocityX: 0,
+            velocityY: 0,
             health: 20,
             }
             this.head2 = {
@@ -116,8 +118,10 @@ class Dragon {
 
     moveHead1(){
         this.head1['radians'] += this.head1['velocity'];
-        this.head1['x'] = this.head1['x'] - Math.sin(this.head1['radians']);
-        this.head1['y'] = this.head1['y'] + Math.cos(this.head1['radians']);
+        this.head1.velocityX = this.head1['x'] - Math.sin(this.head1['radians']);
+        this.head1.velocityY = this.head1['y'] + Math.cos(this.head1['radians']);
+        this.head1['x'] = this.head1.velocityX;
+        this.head1['y'] = this.head1.velocityY;
     }
 
     moveHead2(){
@@ -168,12 +172,17 @@ class Dragon {
         this.bodyAnimation();
     }
 
-    trackHeads() {
+    trackHeads(player, util) {
         if (this.liveHeads.length) {
             this.liveHeads.forEach((head, i) => {
                 if (head.health) {
                     this.drawHeads(head)
                     head.name === 1 ? this.moveHead1() : head.name === 2 ? this.moveHead2() : this.moveHead3()
+                    if (util.collision(head, player.hurtBox)){
+                        head.health--;
+                        console.log(head.name);
+                        console.log(head.health);
+                    }
                 } else {
                     this.liveHeads.splice(i, 1)
                 }
@@ -185,11 +194,11 @@ class Dragon {
 
     }
 
-    update(player) {
+    update(player, util) {
         this.drawAndMoveBody(); 
         this.getTarget(player); 
         this.getFireballInterval(); 
-        this.trackHeads(); 
+        this.trackHeads(player, util); 
     }
 }
 
