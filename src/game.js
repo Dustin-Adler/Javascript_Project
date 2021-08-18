@@ -34,10 +34,23 @@ class Game {
             this.createMap();
             this.player.update();
             this.dragon.update(this.player);
-            this.handleFireballs()
             this.ui.update(this.player);
+            this.handleFireballs()
+            this.handlePlayerAttack()
             requestAnimationFrame(this.draw);
         }, 1000 / this.fps );
+    }
+
+    handlePlayerAttack() {
+        if (this.player.attacking){
+            this.dragon.liveHeads.forEach((head) => {
+                if (this.util.collision(head, this.player.hurtBox)){
+                    head.health--;
+                    console.log(head.name);
+                    console.log(head.health);
+                }
+            })
+        } 
     }
 
     handleFireballs(){
@@ -54,7 +67,6 @@ class Game {
                 //             this.player.y += (Math.floor(fireball.velocityY * 4));}
                 // this.player.x += (Math.floor(fireball.velocityX * 4));
                 // this.player.y += (Math.floor(fireball.velocityY * 4));
-                console.log(this.player.health);
                 this.dragon.fireballs.splice(i, 1);
             }
             if (fireball.x > 232 || fireball.x < 16) this.dragon.fireballs.splice(i, 1);

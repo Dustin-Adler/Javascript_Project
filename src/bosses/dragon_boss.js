@@ -12,6 +12,7 @@ class Dragon {
         this.canvas = canvas;
         this.fireballs = []
         this.fireballInterval = 0
+        this.alive = true
         this.body = {
             w: 24,  
             h: 32,  
@@ -22,6 +23,7 @@ class Dragon {
             bodyCount: 0,
             }
         this.head1 = {
+            name: 1,
             w: 10,  
             h: 16,  
             x: 103,  
@@ -31,9 +33,10 @@ class Dragon {
             radius: 14,
             radians: 0,
             velocity: 0.05,
-            health: 7,
+            health: 20,
             }
             this.head2 = {
+                name: 2, 
                 w: 10,  
                 h: 16,  
                 x: 123,  
@@ -43,9 +46,10 @@ class Dragon {
                 radius: 14,
                 radians: 0,
                 velocity: 0.05,
-                health: 7,
+                health: 20,
                 }
                 this.head3 = {
+                    name: 3,
                     w: 10,  
                     h: 16,  
                     x: 143,  
@@ -55,8 +59,9 @@ class Dragon {
                     radius: 14,
                     radians: 0,
                     velocity: 0.05,
-                    health: 7,
+                    health: 20,
                     }
+        this.liveHeads = [this.head1, this.head2, this.head3]
         this.deadHeads = {
             w: 16,  
             h: 16,  
@@ -139,11 +144,14 @@ class Dragon {
     }
 
     shootFireballs(){ 
-        const heads = [this.head1, this.head2, this.head3]
-        let head = heads[Math.floor((Math.random() * 3)) ]
-        const fireball = new Fireball(this.ctx, this.canvas, head.x + 3, head.y + 16, (this.targetX + 8), (this.targetY + 8) )
-        fireball.getVelocity();
-        this.fireballs.push(fireball)
+        // if statement stops from calling a head after all of them are dead, shouldn't be needed after deleting from the Game.enemies
+        let num = this.liveHeads.length
+        if (num) {
+            let head = this.liveHeads[Math.floor((Math.random() * num)) ]
+            const fireball = new Fireball(this.ctx, this.canvas, head.x + 3, head.y + 16, (this.targetX + 8), (this.targetY + 8) )
+            fireball.getVelocity();
+            this.fireballs.push(fireball)
+        }
     }
 
     getFireballInterval() {
@@ -160,13 +168,17 @@ class Dragon {
         this.bodyAnimation();
     }
 
-    drawAndmoveHeads(){
-        this.drawHeads(this.head1);
-        this.drawHeads(this.head2);
-        this.drawHeads(this.head3);
-        this.moveHead1();
-        this.moveHead2();
-        this.moveHead3();
+    trackHeads() {
+        if (this.liveHeads.length) {
+            this.liveHeads.forEach((head, i) => {
+                if (head.health) {
+                    this.drawHeads(head)
+                    head.name === 1 ? this.moveHead1() : head.name === 2 ? this.moveHead2() : this.moveHead3()
+                } else {
+                    this.liveHeads.splice(i, 1)
+                }
+            })
+        } else this.alive = false
     }
 
     moveDeadHeads() {
@@ -174,10 +186,10 @@ class Dragon {
     }
 
     update(player) {
-        this.drawAndMoveBody();
-        this.drawAndmoveHeads();
-        this.getTarget(player);
-        this.getFireballInterval() 
+        this.drawAndMoveBody(); 
+        this.getTarget(player); 
+        this.getFireballInterval(); 
+        this.trackHeads(); 
     }
 }
 
