@@ -29,6 +29,7 @@ class Player {
         this.lastInput = "up";
         this.moving = false;
         this.attacking = false;
+        this.health = 0;
     }
 
     draw() {
@@ -82,19 +83,19 @@ class Player {
             this.lastInput = "left"
             this.dy = 2
         } 
-        if(this.keys[32] && this.lastInput === "up"){
+        if(this.keys[65] && this.lastInput === "up"){
             this.dy = 1;
             this.attacking = true;
         }
-        if(this.keys[32] && this.lastInput === "down"){
+        if(this.keys[65] && this.lastInput === "down"){
             this.dy = 0;
             this.attacking = true;
         }
-        if(this.keys[32] && this.lastInput === "right"){
+        if(this.keys[65] && this.lastInput === "right"){
             this.dy = 0;
             this.attacking = true;
         }
-        if(this.keys[32] && this.lastInput === "left"){
+        if(this.keys[65] && this.lastInput === "left"){
             this.dy = 1;
             this.attacking = true;
         }

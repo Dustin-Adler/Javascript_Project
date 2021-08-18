@@ -3,8 +3,8 @@ import Fireball from "../fireball";
 
 class Dragon {
 
-    constructor(ctx, canvas ) {
-        this.targetX = 121
+    constructor(ctx, canvas) {
+        this.targetX = 120
         this.targetY = 80
         this.dragon = new Image();
         this.dragon.src = "./Assets/tileset/dragon.png";
@@ -31,7 +31,7 @@ class Dragon {
             radius: 14,
             radians: 0,
             velocity: 0.05,
-            health: 3,
+            health: 7,
             }
             this.head2 = {
                 w: 10,  
@@ -43,7 +43,7 @@ class Dragon {
                 radius: 14,
                 radians: 0,
                 velocity: 0.05,
-                health: 3,
+                health: 7,
                 }
                 this.head3 = {
                     w: 10,  
@@ -55,7 +55,7 @@ class Dragon {
                     radius: 14,
                     radians: 0,
                     velocity: 0.05,
-                    health: 3,
+                    health: 7,
                     }
         this.deadHeads = {
             w: 16,  
@@ -76,6 +76,11 @@ class Dragon {
             }
     }
 
+    getTarget(player){
+        this.targetX = player.x 
+        this.targetY = player.y
+    }
+
     draw(img, sx, sy, sw, sh, dx, dy, dw, dh) {
         this.ctx.drawImage( img, sx, sy, sw, sh, dx, dy, dw, dh)
     }
@@ -84,6 +89,12 @@ class Dragon {
         this.draw(this.dragon, this.body['dx'] * (this.body['w']+1),
         this.body['dy'], this.body['w'], this.body['h'], this.body['x'], 
         this.body['y'], this.body['w'], this.body['h'] )
+    }
+
+    drawHeads(head){
+        this.draw(this.dragon, head['dx'], head['dy'],
+        head['w'], head['h'], head['x'], 
+        head['y'], head['w'], head['h'])
     }
 
     bodyAnimation() {
@@ -96,12 +107,6 @@ class Dragon {
             this.body['dx'] = 0;
             this.body['bodyCount'] = 0;
         }
-    }
-
-    drawHeads(head){
-        this.draw(this.dragon, head['dx'], head['dy'],
-        head['w'], head['h'], head['x'], 
-        head['y'], head['w'], head['h'])
     }
 
     moveHead1(){
@@ -121,16 +126,16 @@ class Dragon {
         this.head3['y'] = this.head3['y'] + Math.cos(this.head3['radians']);
     }
 
-    drawDeadHeads(){
-        this.draw(this.dragon, this.deadHeads['dx'], this.deadHeads['dy'],
-        this.deadHeads['w'], this.deadHeads['h'], this.deadHeads['x'], 
-        this.deadHeads['y'], this.deadHeads['w'], this.deadHeads['h'])
-    }
-
     drawNeck() {
         this.draw(this.dragon, this.neck['dx'],
         this.neck['dy'], this.neck['w'], this.neck['h'], this.neck['x'], 
         this.neck['y'], this.neck['w'], this.neck['h'] )
+    }
+
+    drawDeadHeads(){
+        this.draw(this.dragon, this.deadHeads['dx'], this.deadHeads['dy'],
+        this.deadHeads['w'], this.deadHeads['h'], this.deadHeads['x'], 
+        this.deadHeads['y'], this.deadHeads['w'], this.deadHeads['h'])
     }
 
     shootFireballs(){ 
@@ -141,36 +146,38 @@ class Dragon {
         this.fireballs.push(fireball)
     }
 
-    moveDeadHeads() {
-
-    }
-
-    animationFrames(){
-        this.bodyAnimation();
-    }
-
-    update() {
-        const that = this
-        this.drawBody();
-        this.drawHeads(this.head1);
-        this.drawHeads(this.head2);
-        this.drawHeads(this.head3);
-        this.moveHead1();
-        this.moveHead2();
-        this.moveHead3();
+    getFireballInterval() {
         if (this.fireballInterval < 30){
             this.fireballInterval++
         } else {
             this.shootFireballs();
             this.fireballInterval = 0;
         }
-        // 
-        this.fireballs.forEach((fireball, i) => {
-            fireball.update();
-            if (fireball.x > 232 || fireball.x < 16) this.fireballs.splice(i, 1);
-            if (fireball.y > 198 || fireball.y < 32) this.fireballs.splice(i, 1);
-        })
-        this.animationFrames();
+    }
+
+    drawAndMoveBody() {
+        this.drawBody();
+        this.bodyAnimation();
+    }
+
+    drawAndmoveHeads(){
+        this.drawHeads(this.head1);
+        this.drawHeads(this.head2);
+        this.drawHeads(this.head3);
+        this.moveHead1();
+        this.moveHead2();
+        this.moveHead3();
+    }
+
+    moveDeadHeads() {
+
+    }
+
+    update(player) {
+        this.drawAndMoveBody();
+        this.drawAndmoveHeads();
+        this.getTarget(player);
+        this.getFireballInterval() 
     }
 }
 
