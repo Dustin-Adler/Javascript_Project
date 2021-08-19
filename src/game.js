@@ -26,6 +26,9 @@ class Game {
         this.util = new Util
         this.enemies = [this.dragon]
         this.droppedHeart = false
+        this.start = true
+        this.onGoingGame = true
+        // this.gameOver = false
     }
 
     dropHeartContainer(){
@@ -57,10 +60,21 @@ class Game {
         }
     }
 
+    gameOver(frame, setFPS) {
+        if (this.player.dead) {
+            window.cancelAnimationFrame(frame)
+            window.clearTimeout(setFPS)
+            this.ctx.clearRect(0,0,this.width,this.height);
+            this.onGoingGame = false
+            this.sounds.pauseAllSounds()
+            // this.gameOver = true;
+        }
+    }
+
     draw() {
         this.sounds.startBattleSong();
         this.listeners();
-        setTimeout(() => {
+        let setFPS = setTimeout(() => {
             this.ctx.clearRect(0,0,this.width,this.height);
             this.createMap();
             this.player.update();
@@ -69,7 +83,8 @@ class Game {
             this.handleEnemies();
             this.handleFireballs();
             // this.handlePlayerAttack()
-            requestAnimationFrame(this.draw);
+            this.gameOver(frame, setFPS)
+            let frame = window.requestAnimationFrame(this.draw);
         }, 1000 / this.fps );
     }
 
@@ -81,7 +96,9 @@ class Game {
         this.dragon.fireballs.forEach((fireball, i) => {
             fireball.update();
             if (this.util.collision(fireball, this.player)) {
-                this.player.health++;
+                if (this.player.health < 10) {
+                    this.player.health++;
+                    }
                 this.sounds.playerTakeDmgSound();
                 if (this.player.x + Math.floor(fireball.velocityX * 4) < (240 - this.player.w) &&
                     this.player.x + Math.floor(fireball.velocityX * 4) > 16 &&

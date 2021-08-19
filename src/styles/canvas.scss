@@ -9,3 +9,11 @@ canvas {
     left: 50%;
     transform: translate( -50%, -45%)
 }
+
+.begin { 
+    background-image: url(../Assets/tileset/start_restart_splash/beginSplash.jpg);
+}
+
+.end {
+    background-image: url(../Assets/tileset/start_restart_splash/endSplash.jpg);
+}

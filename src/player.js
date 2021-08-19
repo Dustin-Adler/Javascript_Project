@@ -61,6 +61,7 @@ class Player {
         if (this.health >= 10) {
             this.dead = true;
             this.sounds.deathSound()
+            // this.sounds.startBattleSong.stop
         }
     }
 

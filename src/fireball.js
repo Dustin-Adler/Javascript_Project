@@ -13,8 +13,8 @@ class Fireball {
         this.targetY = targetY;
         this.dx = 0;
         this.dy = 0;
-        this.velocityX = 1;
-        this.velocityY = 4;
+        this.velocityX = 0;
+        this.velocityY = 0;
         this.animationCount = 0;
     }
 

@@ -3,6 +3,27 @@
   \*************************************************************************************************************************************/
 body {
   margin: 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+#description {
+  position: relative;
+  top: 450px;
+  color: black;
+  font-size: 24px;
+  font-weight: 900;
+  inline-size: 240px;
+  z-index: 1;
+  text-shadow: 1px 1px #FC6302;
+}
+
+.hidden {
+  visibility: collapse;
 }
 
 canvas {
@@ -15,4 +36,12 @@ canvas {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -45%);
+}
+
+.begin {
+  background-image: url(../Assets/tileset/start_restart_splash/beginSplash.jpg);
+}
+
+.end {
+  background-image: url(../Assets/tileset/start_restart_splash/endSplash.jpg);
 }

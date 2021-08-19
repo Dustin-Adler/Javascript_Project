@@ -16,6 +16,16 @@ class Sound {
         this.take_dmg.src = "./Assets/sound/take_dmg.wav"
     }
 
+    pauseAllSounds() {
+        this.attack.pause();
+        this.battleSong.pause();
+        this.death.pause();
+        this.enemy_hit.pause();
+        this.fanfare.pause();
+        this.reveal_item.pause();
+        this.take_dmg.pause();
+    }
+
     attackSound() {
         this.attack.play();
         this.attack.volume = 0.7
@@ -23,7 +33,7 @@ class Sound {
 
     startBattleSong() {
         this.battleSong.play();
-        this.battleSong.volume = 0.35 
+        this.battleSong.volume = 0.1 
     } 
 
     deathSound() {
@@ -47,7 +57,6 @@ class Sound {
     playerTakeDmgSound() {
         this.take_dmg.play();
     }
-
 }
 
 export default Sound;
