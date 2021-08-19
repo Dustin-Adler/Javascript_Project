@@ -20,6 +20,7 @@ body {
   inline-size: 240px;
   z-index: 1;
   text-shadow: 1px 1px #FC6302;
+  -webkit-text-stroke: 0.3px #FC6302;
 }
 
 .hidden {
