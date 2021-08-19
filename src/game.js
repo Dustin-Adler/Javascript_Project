@@ -1,16 +1,18 @@
 import Dragon from "./bosses/dragon_boss";
 import MapLayouts from "./dungeonMaps";
 import Player from "./player";
+import Sound from "./sound"
 import Items from "./items";
 import Util from "./util";
 import Ui from "./ui";
 
 class Game {
-    constructor() {
+    constructor() { 
         this.canvas = document.getElementById('game-canvas');
         this.width = this.canvas.width = 256;
         this.height = this.canvas.height = 240;
         this.ctx = this.canvas.getContext('2d');
+        this.sounds = new Sound();
         this.fps = 60;
         this.roomTiles = new Image();
         this.roomTiles.src = "./Assets/tileset/roomTiles.png";
@@ -23,11 +25,16 @@ class Game {
         this.ui = new Ui(this.ctx, this.canvas)
         this.util = new Util
         this.enemies = [this.dragon]
+        this.droppedHeart = false
     }
 
-    dropHearContainer(){
-        if (!this.enemies.length) {
-            this.items.heartContainer(120, 112)
+    dropHeartContainer(){
+        if (!this.droppedHeart) {
+            if (!this.enemies.length) {
+                this.items.currentItems.push(this.items.drawHeartContainer(120, 112))
+                this.sounds.revealItemSound();
+                this.droppedHeart = true
+            }
         }
     }
 
@@ -37,26 +44,30 @@ class Game {
     }
 
     handleEnemies(){
-        this.enemies.forEach((enemy, i) => {
-            if (!enemy.alive) {
-                this.enemies.splice(i, 1)
-            } else {
-                enemy.update(this.player, this.util);
-            }
-        })
+        if (this.enemies.length) {
+            this.enemies.forEach((enemy, i) => {
+                if (!enemy.alive) {
+                    this.enemies.splice(i, 1)
+                } else {
+                    enemy.update(this.player, this.util);
+                }
+            })
+        } else {
+            this.dropHeartContainer()
+        }
     }
 
     draw() {
+        this.sounds.startBattleSong();
         this.listeners();
         setTimeout(() => {
             this.ctx.clearRect(0,0,this.width,this.height);
             this.createMap();
             this.player.update();
-            this.items.update();
+            this.items.update(this.player, this.util, this.sounds);
             this.ui.update(this.player);
             this.handleEnemies();
             this.handleFireballs();
-            this.handleEnemies();
             // this.handlePlayerAttack()
             requestAnimationFrame(this.draw);
         }, 1000 / this.fps );
@@ -71,6 +82,7 @@ class Game {
             fireball.update();
             if (this.util.collision(fireball, this.player)) {
                 this.player.health++;
+                this.sounds.playerTakeDmgSound();
                 if (this.player.x + Math.floor(fireball.velocityX * 4) < (240 - this.player.w) &&
                     this.player.x + Math.floor(fireball.velocityX * 4) > 16 &&
                     this.player.y + Math.floor(fireball.velocityY * 4) < 208 - this.player.h &&

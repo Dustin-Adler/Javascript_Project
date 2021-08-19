@@ -1,22 +1,53 @@
+import Sound from "./sound";
+
 class Items {
 
     constructor(ctx, canvas){
         this.ctx = ctx;
         this.canvas = canvas;
+        this.sounds = new Sound();
         this.heartContainer = new Image();
-        this.heartContainer.src = "Assets/tileset/heart-containers.png"
+        this.heartContainer.src = "Assets/tileset/heart-containers.png";
+        this.currentItems = [];
     }
 
     draw(img, sx, sy, sw, sh, dx, dy, dw, dh) {
         this.ctx.drawImage( img, sx, sy, sw, sh, dx, dy, dw, dh)
     }
 
-    dropHeartContainer(x, y) {
-        this.draw(this.heartContainer, 0, 0, 16, 16, x, y, 16, 16 )
+    drawHeartContainer(x, y) {
+        let heartContainerItem;
+        return heartContainerItem = {
+            img: this.heartContainer,
+            sx: 0,
+            sy: 0, 
+            sw: 16, 
+            sh: 16, 
+            x: x, 
+            y: y, 
+            w: 16, 
+            h: 16
+        }
     }
 
-    update() {
-        this.dropHeartContainer();
+    drawCurrentItems(){
+        this.currentItems.forEach((item =>{
+            this.draw(item.img, item.sx, item.sy, item.sw, item.sh, item.x, item.y, item.w, item.h);
+        }))
+    }
+
+    pickUpItem(player, util, sound) {
+        this.currentItems.forEach((item, i) => {
+            if (util.collision(item, player)) {
+                this.currentItems.splice(i, 1)
+                sound.fanfareSound()
+            }
+        })
+    }
+
+    update(player, util, sound) {
+        this.drawCurrentItems()
+        this.pickUpItem(player, util, sound)
     }
 
 }

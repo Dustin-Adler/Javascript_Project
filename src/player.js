@@ -1,10 +1,11 @@
-
+import Sound from "./sound";
 
 class Player {
 
     constructor(ctx, canvas) {
         this.ctx = ctx;
         this.canvas = canvas;
+        this.sounds = new Sound();
         this.mcSprite = new Image();
         this.mcSprite.src = "./Assets/tileset/mcMasterSheet.png";
         this.left_right_attack = new Image();
@@ -26,11 +27,40 @@ class Player {
         this.lastInput = "up";
         this.moving = false;
         this.attacking = false;
+        this.dead = false;
         this.hurtBox = {
             w: 8,
             h: 16,
             x: this.x - 8, 
             y: this.y
+        }
+    }
+
+    update() {
+        this.draw();
+        this.move();
+        this.animationFrame();
+        this.deathCheck()
+    }
+
+    
+    keyDown(e) {
+        this.keys[e.keyCode] = true;
+        this.moving = true;
+    }
+
+    keyUp(e){
+        delete this.keys[e.keyCode];
+        this.moving = false;
+        this.attacking = false
+        this.hurtBox.w = 0;
+        this.hurtBox.h = 0;
+    }
+
+    deathCheck() {
+        if (this.health >= 10) {
+            this.dead = true;
+            this.sounds.deathSound()
         }
     }
 
@@ -52,23 +82,7 @@ class Player {
 
         }
     }
-    
-    update() {
-        this.draw();
-        this.move();
-        this.animationFrame();
-    }
 
-    keyDown(e) {
-        this.keys[e.keyCode] = true;
-        this.moving = true;
-    }
-
-    keyUp(e){
-        delete this.keys[e.keyCode];
-        this.moving = false;
-        this.attacking = false
-    }
 
     move(){
         if (this.keys[38] && this.y > 32) {
@@ -95,25 +109,28 @@ class Player {
             this.dy = 1;
             this.attacking = true;
             this.hurtBox.x = this.x;
-            this.hurtBox.y = this.y + 8;
+            this.hurtBox.y = this.y - 8;
             this.hurtBox.w = 16;
             this.hurtBox.h = 8;
+            this.sounds.attackSound();
         }
         if(this.keys[65] && this.lastInput === "down"){
             this.dy = 0;
             this.attacking = true;
             this.hurtBox.x = this.x;
-            this.hurtBox.y = this.y - this.h - 8;
+            this.hurtBox.y = this.y + this.h + 8;
             this.hurtBox.w = 16;
             this.hurtBox.h = 8;
+            this.sounds.attackSound();
         }
         if(this.keys[65] && this.lastInput === "right"){
             this.dy = 0;
             this.attacking = true;
-            this.hurtBox.x = this.x + this.w + 8;
+            this.hurtBox.x = this.x + this.w;
             this.hurtBox.y = this.y;
             this.hurtBox.w = 8;
             this.hurtBox.h = 16;
+            this.sounds.attackSound();
         }
         if(this.keys[65] && this.lastInput === "left"){
             this.dy = 1;
@@ -122,6 +139,7 @@ class Player {
             this.hurtBox.y = this.y;
             this.hurtBox.w = 8;
             this.hurtBox.h = 16;
+            this.sounds.attackSound();
         }
     } 
 

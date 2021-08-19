@@ -1,7 +1,9 @@
 import Game from "./game"
-import Fireball from "./fireball"
+// import Sound from "./sound"
 
-addEventListener('DOMContentLoaded', function() {
+addEventListener('DOMContentLoaded', function() { 
+    // const sound = new Sound();
     const game = new Game(); 
+    // if (game) sound.battleSong.play();
     game.draw()
 })

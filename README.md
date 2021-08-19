@@ -38,3 +38,19 @@ __Tuesday__: Base of the game finished so that I can work on setting up the star
 __Wednesday__: I'm working on some of my bonuses this day. Additional weapon for the mc, two or three enemies and two or three more screens that must be traversed before reaching the boss.
 
 __Thursday__: This day is devoted to publishing the work, making sure that everything works correctly on the hosted site.
+
+Credit is given where credit is do. I couldn't have made my game without the contributions from these generous people.
+
+Music Composed and produced by Marllon Silva a.k.a xDeviruchi 
+https://xdeviruchi.itch.io/8-bit-fantasy-adventure-music-pack
+
+
+Dragon Sprite and fireball ripped by Mister Mike
+https://www.spriters-resource.com/nes/legendofzelda/sheet/8366/
+
+mcSprite by Vryell
+https://vryell.itch.io/tiny-adventure-pack
+
+
+PIPOYA FREE RPG TILESET 16x16 Pixel
+https://pipoya.itch.io/free-rpg-tileset-16x16

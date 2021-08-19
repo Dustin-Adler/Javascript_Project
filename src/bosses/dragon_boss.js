@@ -1,11 +1,13 @@
 // import Player from "../player";
 import Fireball from "../fireball";
+import Sound from "../sound";
 
 class Dragon {
 
     constructor(ctx, canvas) {
         this.targetX = 120
         this.targetY = 80
+        this.sounds = new Sound();
         this.dragon = new Image();
         this.dragon.src = "./Assets/tileset/dragon.png";
         this.ctx = ctx;
@@ -35,7 +37,7 @@ class Dragon {
             velocity: 0.05,
             velocityX: 0,
             velocityY: 0,
-            health: 20,
+            health: 50,
             }
             this.head2 = {
                 name: 2, 
@@ -48,7 +50,7 @@ class Dragon {
                 radius: 14,
                 radians: 0,
                 velocity: 0.05,
-                health: 20,
+                health: 50,
                 }
                 this.head3 = {
                     name: 3,
@@ -61,7 +63,7 @@ class Dragon {
                     radius: 14,
                     radians: 0,
                     velocity: 0.05,
-                    health: 20,
+                    health: 50,
                     }
         this.liveHeads = [this.head1, this.head2, this.head3]
         this.deadHeads = {
@@ -180,8 +182,7 @@ class Dragon {
                     head.name === 1 ? this.moveHead1() : head.name === 2 ? this.moveHead2() : this.moveHead3()
                     if (util.collision(head, player.hurtBox)){
                         head.health--;
-                        console.log(head.name);
-                        console.log(head.health);
+                        this.sounds.enemyHitSound();
                     }
                 } else {
                     this.liveHeads.splice(i, 1)
@@ -190,7 +191,7 @@ class Dragon {
         } else this.alive = false
     }
 
-    moveDeadHeads() {
+    moveDeadHeads() { 
 
     }
 
