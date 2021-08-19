@@ -28,7 +28,6 @@ class Game {
         this.droppedHeart = false
         this.start = true
         this.onGoingGame = true
-        // this.gameOver = false
     }
 
     dropHeartContainer(){
@@ -63,11 +62,10 @@ class Game {
     gameOver(frame, setFPS) {
         if (this.player.dead) {
             window.cancelAnimationFrame(frame)
-            window.clearTimeout(setFPS)
+            // window.clearTimeout(setFPS)
             this.ctx.clearRect(0,0,this.width,this.height);
             this.onGoingGame = false
             this.sounds.pauseAllSounds()
-            // this.gameOver = true;
         }
     }
 
