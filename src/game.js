@@ -28,6 +28,7 @@ class Game {
         this.droppedHeart = false
         this.start = true
         this.onGoingGame = true
+        this.win = false
     }
 
     dropHeartContainer(){
@@ -60,17 +61,23 @@ class Game {
     }
 
     gameOver(frame, setFPS) {
-        if (this.player.dead) {
-            window.cancelAnimationFrame(frame)
+        if (this.player.dead || this.win) {
             // window.clearTimeout(setFPS)
             this.ctx.clearRect(0,0,this.width,this.height);
+            window.cancelAnimationFrame(frame)
             this.onGoingGame = false
             this.sounds.pauseAllSounds()
         }
     }
 
+    currentWinCondition() {
+        if (this.items.win) {
+            this.win = true
+        }
+    }
+
     draw() {
-        this.sounds.startBattleSong();
+        // this.sounds.startBattleSong();
         this.listeners();
         let setFPS = setTimeout(() => {
             this.ctx.clearRect(0,0,this.width,this.height);
@@ -80,6 +87,7 @@ class Game {
             this.ui.update(this.player);
             this.handleEnemies();
             this.handleFireballs();
+            this.currentWinCondition()
             // this.handlePlayerAttack()
             this.gameOver(frame, setFPS)
             let frame = window.requestAnimationFrame(this.draw);

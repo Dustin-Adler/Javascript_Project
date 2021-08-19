@@ -9,6 +9,7 @@ class Items {
         this.heartContainer = new Image();
         this.heartContainer.src = "Assets/tileset/heart-containers.png";
         this.currentItems = [];
+        this.win = false
     }
 
     draw(img, sx, sy, sw, sh, dx, dy, dw, dh) {
@@ -36,18 +37,19 @@ class Items {
         }))
     }
 
-    pickUpItem(player, util, sound) {
+    pickUpItem(player, util) {
         this.currentItems.forEach((item, i) => {
             if (util.collision(item, player)) {
                 this.currentItems.splice(i, 1)
-                sound.fanfareSound()
+                this.sounds.fanfareSound()
+                this.win = true
             }
         })
     }
 
     update(player, util, sound) {
         this.drawCurrentItems()
-        this.pickUpItem(player, util, sound)
+        this.pickUpItem(player, util)
     }
 
 }

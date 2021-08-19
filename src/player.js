@@ -59,8 +59,10 @@ class Player {
 
     deathCheck() {
         if (this.health >= 10) {
+            if (this.dead === false) {
+                this.sounds.deathSound()
+            }
             this.dead = true;
-            this.sounds.deathSound()
             // this.sounds.startBattleSong.stop
         }
     }

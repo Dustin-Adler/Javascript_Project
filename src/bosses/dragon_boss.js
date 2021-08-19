@@ -37,7 +37,7 @@ class Dragon {
             velocity: 0.05,
             velocityX: 0,
             velocityY: 0,
-            health: 50,
+            health: 20,
             }
             this.head2 = {
                 name: 2, 
@@ -50,7 +50,7 @@ class Dragon {
                 radius: 14,
                 radians: 0,
                 velocity: 0.05,
-                health: 50,
+                health: 20,
                 }
                 this.head3 = {
                     name: 3,
@@ -63,7 +63,7 @@ class Dragon {
                     radius: 14,
                     radians: 0,
                     velocity: 0.05,
-                    health: 50,
+                    health: 20,
                     }
         this.liveHeads = [this.head1, this.head2, this.head3]
         this.deadHeads = {

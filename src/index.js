@@ -24,6 +24,12 @@ addEventListener('DOMContentLoaded', function() {
             tag.classList.remove("hidden")
             beforeGame.classList.add("end")
         }
+        if (game.win) {
+            tag.innerText = "You won! Thank you for playing my game! Press Enter if you'd like to play again."
+            tag.classList.remove("hidden")
+            beforeGame.classList.add("win")
+        }
+
     })
     // const tag = document.getElementById("description")
 })
