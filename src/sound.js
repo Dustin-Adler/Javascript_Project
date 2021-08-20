@@ -14,6 +14,8 @@ class Sound {
         this.reveal_item.src = "./Assets/sound/reveal_item.wav"
         this.take_dmg = new Audio();
         this.take_dmg.src = "./Assets/sound/take_dmg.wav"
+        this.deathScrean = new Audio();
+        this.deathScrean.src = "./Assets/sound/ganon_laugh.wav"
     }
 
     pauseAllSounds() {
@@ -24,6 +26,10 @@ class Sound {
         this.fanfare.pause();
         this.reveal_item.pause();
         this.take_dmg.pause();
+    }
+
+    deathScreenSound(){
+        this.deathScrean.play();
     }
 
     attackSound() {

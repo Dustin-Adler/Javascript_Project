@@ -1,5 +1,5 @@
 import Game from "./game"
-// import Sound from "./sound"
+import Sound from "./sound"
 
 addEventListener('DOMContentLoaded', function() { 
     const beforeGame = document.getElementById('game-canvas')
