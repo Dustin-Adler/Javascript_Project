@@ -6,10 +6,11 @@ addEventListener('DOMContentLoaded', function() {
     const ctx = beforeGame.getContext('2d')
     beforeGame.classList.add("begin")
     const game = new Game(); 
-    const tag = document.getElementById("description")
+    const tag = document.getElementById("instructions")
+    const instructions = document.getElementById('instructions-bg')
     addEventListener("keydown", function(e){
         if( e.code === "Enter" && game.start) {
-            tag.classList.add("hidden")
+            instructions.classList.add("hidden")
             beforeGame.classList.remove("begin")
             game.draw()
             game.start = false
@@ -20,13 +21,13 @@ addEventListener('DOMContentLoaded', function() {
 
     setInterval(function() {
         if (game.player.dead) {
-            tag.innerText = "Press Enter to try again."
-            tag.classList.remove("hidden")
+            tag.innerText = "PRESS ENTER TO TRY AGAIN"
+            instructions.classList.remove("hidden")
             beforeGame.classList.add("end")
         }
         if (game.win) {
-            tag.innerText = "You won! Thank you for playing my game! Press Enter if you'd like to play again."
-            tag.classList.remove("hidden")
+            tag.innerText = "YOU WON! THANK YOU FOR PLAYING MY GAME! PRESS ENTER IF YOU'DE LIKE TO PLAY AGAIN."
+            instructions.classList.remove("hidden")
             beforeGame.classList.add("win")
         }
 

@@ -1,46 +1,16 @@
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
-#instructions {
-  position: relative;
-  top: 450px;
-  color: black;
-  font-size: 24px;
-  font-weight: 900;
-  inline-size: 240px;
-  z-index: 1;
-  text-shadow: 1px 1px #FC6302;
-  -webkit-text-stroke: 0.3px #FC6302;
-}
-
-p {
-  margin: 0;
-  width: 100%;
-  overflow: hidden;
-  background: #0d0c0c;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-image: linear-gradient(to right top, rgba(40, 36, 36, 0.5), #0d0c0c);
-}
-
-svg {
-  width: 100%;
-}
-
-.hidden {
-  visibility: collapse;
-}
-
+@import url(https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap);
+/*!*****************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss (1) ***!
+  \*****************************************************************************************************************************************/
 canvas {
   border: 1px solid black;
-  margin: 0 0;
-  position: absolute;
+  margin: 10px 10px;
   width: 256px;
   height: 240px;
   zoom: 300%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -45%);
 }
 
 .begin {
@@ -56,7 +26,7 @@ canvas {
 }
 
 body {
-  background-image: url(../Assets/simple-tri-background.png);
+  background-image: url(../Assets/blue-orange-spec-tri.png);
   margin: 0 0;
   display: flex;
   flex-direction: column;
@@ -64,4 +34,38 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   text-align: center;
+}
+
+.title-canvas-instructions {
+  display: flex;
+  flex-direction: column;
+}
+
+.canvas-instructions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#instructions-bg {
+  background-color: black;
+  border-radius: 10px;
+  padding: 0px 8px;
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+#instructions {
+  font-family: "Press Start 2P", cursive;
+  color: white;
+  font-size: 18px;
+  font-weight: 900;
+  max-width: 550px;
+  padding: 10px;
+}
+
+.hidden {
+  visibility: collapse;
 }

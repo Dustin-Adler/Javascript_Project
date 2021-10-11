@@ -55,6 +55,8 @@ class Player {
         this.attacking = false
         this.hurtBox.w = 0;
         this.hurtBox.h = 0;
+        this.hurtBox.x = 0;
+        this.hurtBox.y = 0;
     }
 
     deathCheck() {
@@ -88,27 +90,27 @@ class Player {
 
 
     move(){
-        if (this.keys[38] && this.y > 32) {
+        if (this.keys[87] && this.y > 32) {
             this.y -= this.speed;
             this.lastInput = "up"
             this.dy = 0
         } 
-         if(this.keys[40] && this.y < (240 - 32) - this.h) {
+         if(this.keys[83] && this.y < (240 - 32) - this.h) {
             this.y += this.speed;
             this.lastInput = "down"
             this.dy = 3
         } 
-        if(this.keys[39] && this.x < (256 - 16) - this.w) {
+        if(this.keys[68] && this.x < (256 - 16) - this.w) {
             this.x += this.speed;
             this.lastInput = "right"
             this.dy = 1
         } 
-        if(this.keys[37] && this.x > 16) {
+        if(this.keys[65] && this.x > 16) {
             this.x -= this.speed;
             this.lastInput = "left"
             this.dy = 2
         } 
-        if(this.keys[65] && this.lastInput === "up"){
+        if(this.keys[32] && this.lastInput === "up"){
             this.dy = 1;
             this.attacking = true;
             this.hurtBox.x = this.x;
@@ -117,7 +119,7 @@ class Player {
             this.hurtBox.h = 8;
             this.sounds.attackSound();
         }
-        if(this.keys[65] && this.lastInput === "down"){
+        if(this.keys[32] && this.lastInput === "down"){
             this.dy = 0;
             this.attacking = true;
             this.hurtBox.x = this.x;
@@ -126,7 +128,7 @@ class Player {
             this.hurtBox.h = 8;
             this.sounds.attackSound();
         }
-        if(this.keys[65] && this.lastInput === "right"){
+        if(this.keys[32] && this.lastInput === "right"){
             this.dy = 0;
             this.attacking = true;
             this.hurtBox.x = this.x + this.w;
@@ -135,7 +137,7 @@ class Player {
             this.hurtBox.h = 16;
             this.sounds.attackSound();
         }
-        if(this.keys[65] && this.lastInput === "left"){
+        if(this.keys[32] && this.lastInput === "left"){
             this.dy = 1;
             this.attacking = true;
             this.hurtBox.x = this.x - 8;
