@@ -8,19 +8,34 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./dist/main.css" />
     <script src="./dist/main.js"></script>
-    <title>Relda: The Legend of Nitsud</title>
+    <title>Relda</title>
     <link rel="shorcut icon" href="./Assets/tileset/favicon.png">
 </head>
 
 <body class= 'body' >
-    <div class = 'main-body'>
-        <h1>Legend of Relda</h1>
-        <p id = "description" >
-            Press A to attack and use the arrow keys to move.
-            Press Enter whenever you're ready.
-        </p>
+    <div class='title-canvas-instructions'>
+        <div class = 'main-body'>
+            <h1 class='main-title'>Legend of Relda</h1>
+        </div>
+        <div class='title-canvas'>
+            <canvas id="game-canvas" width="256" height="240"></canvas>
+            <div class='instructions-background'>
+                <p id = "instructions" >
+                    <svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+                        <path id="path">
+                            <animate attributeName="d" from="m0,110 h0" to="m0,110 h1100" dur="6.8s" begin="0s" repeatCount="indefinite"/>
+                        </path>
+                        <text font-size="26" font-family="Montserrat" fill='hsla(36, 95%, 85%, 1)'>
+                           <textPath xlink:href="#path">
+                                Press A to attack and use the arrow keys to move.
+                                Press Enter whenever you're ready.
+                            </textPath>
+                        </text>
+                    </svg>
+                </p>
+            </div>
+        </div>
     </div>
-    <canvas id="game-canvas" width="256" height="240"></canvas>
 </body>
 
 </html>
