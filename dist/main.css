@@ -5,12 +5,25 @@
 /*!*****************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss (1) ***!
   \*****************************************************************************************************************************************/
-canvas {
-  border: 1px solid black;
-  margin: 10px 10px;
+.set-game-on-tv {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+#game-canvas {
+  margin: 170px 0px 45px 20px;
+  position: relative;
   width: 256px;
   height: 240px;
   zoom: 300%;
+}
+
+.tv {
+  background-image: url(../Assets/bg-splash/cartoon-tv.png);
+  position: absolute;
+  width: 1100px;
+  height: 1260px;
 }
 
 .begin {
@@ -26,7 +39,7 @@ canvas {
 }
 
 body {
-  background-image: url(../Assets/blue-orange-spec-tri.png);
+  background-image: url(../Assets/bg-splash/blue-orange-spec-tri.png);
   margin: 0 0;
   display: flex;
   flex-direction: column;
@@ -37,20 +50,22 @@ body {
 }
 
 .title-canvas-instructions {
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+  height: 100%;
 }
 
 .canvas-instructions {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 #instructions-bg {
   background-color: black;
   border-radius: 10px;
-  padding: 0px 8px;
+  padding: 50px 15px 50px 15px;
+  margin-left: 2%;
   height: fit-content;
   width: fit-content;
   display: flex;
@@ -66,6 +81,95 @@ body {
   padding: 10px;
 }
 
+.spacer {
+  width: 50px;
+}
+
 .hidden {
   visibility: collapse;
+}
+
+.footer {
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nes-system {
+  background-image: url(../Assets/bg-splash/nes.png);
+  width: 523px;
+  height: 355px;
+  transform: scale(0.8);
+}
+
+.heel {
+  display: flex;
+  justify-content: space-evenly;
+}
+.heel .personal-links {
+  display: flex;
+  justify-content: space-evenly;
+}
+.heel .p1-controller {
+  background-image: url(../Assets/bg-splash/p1-nes-controller.png);
+  width: 525px;
+  height: 420px;
+}
+.heel .p2-controller {
+  background-image: url(../Assets/bg-splash/p2-nes-controller.png);
+  width: 560px;
+  height: 400px;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }

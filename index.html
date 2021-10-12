@@ -11,26 +11,41 @@
     <title>Relda</title>
     <link rel="shorcut icon" href="./Assets/tileset/favicon.png">
 </head>
-
+<header>
+    <div class = 'main-body'>
+        <h1 class='main-title'>Legend of Relda</h1>
+    </div>
+</header>
 <body class= 'body' >
     <div class='title-canvas-instructions'>
-        <div class = 'main-body'>
-            <h1 class='main-title'>Legend of Relda</h1>
-        </div>
         <div class='canvas-instructions'>
-            <canvas id="game-canvas" width="256" height="240"></canvas>
             <div id ='instructions-bg'>
                 <p id ="instructions" >
                     SPACEBAR TO ATTACK
-                    <br>
+                    <br><br>
                     W S A D KEYS TO MOVE
-                    <br>
+                    <br><br>
                     PRESS ENTER TO PLAY!
                 </p>
             </div>
             <div class='spacer'></div>
+            <div class='set-game-on-tv'>
+                <canvas id="game-canvas"></canvas>
+                <div class='tv'></div>
+            </div>
         </div>
     </div>
 </body>
-
+<footer class='footer'>
+    <div class='nes-system'></div>
+    <div class='heel'>
+        <div class='p1-controller'></div>
+        <ul class='personal-links'>
+            <li class='link'>Linked In</li>
+            <li class='link'>Angel List</li>
+            <li class='link'>Git Hub</li>
+        </ul>
+        <div class='p2-controller'></div>
+    </div>
+</footer>
 </html>
