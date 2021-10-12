@@ -1,3 +1,5 @@
+Checkout the [LIVE](https://dustin-adler.github.io/Relda_Legend_of_Nitsud/) version!
+
 I want to recreate the boss fight in the fourth castle from the original Zelda on NES. It will be Relda, the legend of Nitsud. Most of the background and other elements should be created with canvas. I'm going to need to track a health bar, move the mc sprite, animate a the boss sprite that will target the mc with projectiles that can reduce player health. Player should have the ablilty move around on the screen within a designated grid that may have obsticles that can interact with the hit boxes of the projectiles. 
 
 
