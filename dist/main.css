@@ -5,6 +5,21 @@
 /*!*****************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss (1) ***!
   \*****************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Suez+One&display=swap);
+/*!*****************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss (2) ***!
+  \*****************************************************************************************************************************************/
+.title-background {
+  border: 35px solid green;
+  padding: 40px;
+}
+.title-background .title-text {
+  font-family: "Press Start 2P", cursive;
+}
+.title-background .main-title {
+  font-family: "Suez One", serif;
+  font-size: 20vh;
+}
 .set-game-on-tv {
   display: flex;
   align-items: center;
