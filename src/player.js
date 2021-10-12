@@ -45,6 +45,7 @@ class Player {
 
     
     keyDown(e) {
+        e.preventDefault()
         this.keys[e.keyCode] = true;
         this.moving = true;
     }
