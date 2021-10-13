@@ -1,17 +1,79 @@
 .title-background {
-    border: 35px solid green;
-    padding: 40px;
+    // border: 35px solid green;
+    position: relative;
+    perspective: 1000px;
+    background-color: #b9caf8;
+    box-shadow: rgba(255,195,177) 0px 30px 60px -12px inset, rgba(255,195,177) 0px 18px 36px -18px inset;
+    padding: 50px 50px 0px;
+    margin-top: 10vh;
+    margin-bottom: -300px;
+    border-radius: 10px;
+    z-index: 1;
 
     .title-text{
         font-family: 'Press Start 2P', cursive;
+        font-size: 2.75vh;
+        text-align: justify;
+        margin-left: 3vw;
+        margin-bottom: -7vh;
+        letter-spacing: -2px;
     }
 
     .main-title{
         font-family: 'Suez One', serif;
-        font-size: 20vh;
+        font-size: 25vh;
+        transform-origin: 50% 100%;
+        transform: rotateX(30deg);
+        letter-spacing: -3px;
+        color: #FE6604;
+
+        .rel {
+            margin-right: -1.1vw;
+            text-shadow: 5px 4px black, 
+            10px 8px black,
+            15px 12px black,
+            20px 16px black,
+            25px 20px black;
+        }
+
+        .da{
+            margin-left: -1.1vw;
+            text-shadow: -4px 4px black, 
+            -8px 8px black,
+            -12px 12px black,
+            -16px 16px black,
+            -20px 20px black;
+            letter-spacing: -15px;
+        }
+    }
+
+    .sword-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .sword-underline{
-        // background-image: ;
+        background-image: url('../Assets/bg-splash/buster-sword.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        width: 80%;
+        height: 210px;
     }
+}
+
+.title-background::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 96px;
+    background-image: url('../Assets/bg-splash/thin-vine-border.png');
+    width: 600px;
+    height: 444px;
+    // border: thin solid violet;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: scaleX((1.325));
+    // z-index: 1;
 }
