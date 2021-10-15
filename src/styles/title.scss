@@ -1,9 +1,11 @@
 .title-background {
-    // border: 35px solid green;
+    border: 1px solid transparent;
     position: relative;
     perspective: 1000px;
     background-color: #b9caf8;
-    box-shadow: rgba(255,195,177) 0px 30px 60px -12px inset, rgba(255,195,177) 0px 18px 36px -18px inset;
+    box-shadow: 
+        rgba(255,195,177) 0rem 0rem 2.5rem 0.25rem, 
+        rgba(255,195,177) 0rem 0rem 36rem 0rem inset;
     padding: 50px 50px 0px;
     margin-top: 5vh;
     margin-bottom: -300px;
@@ -12,23 +14,24 @@
 
     .title-text{
         font-family: 'Press Start 2P', cursive;
-        font-size: 1rem;
+        font-size: 2.5rem;
         text-align: justify;
-        margin-left: 3vw;
-        margin-bottom: -7vh;
-        letter-spacing: -2px;
+        margin-left: 12rem;
+        margin-bottom: -9rem;
+        letter-spacing: -0.2rem;
     }
 
     .main-title{
         font-family: 'Suez One', serif;
-        font-size: 1rem;
+        font-size: 25rem;
         transform-origin: 50% 100%;
         transform: rotateX(30deg);
-        letter-spacing: -3px;
+        letter-spacing: -0.4rem;
         color: #FE6604;
+        margin: 0rem 4rem 0rem;
 
         .rel {
-            margin-right: -1.1vw;
+            margin-right: 0rem;
             text-shadow: 5px 4px black, 
             10px 8px black,
             15px 12px black,
@@ -37,13 +40,13 @@
         }
 
         .da{
-            margin-left: -1.1vw;
+            margin-left: -3.6rem;
             text-shadow: -4px 4px black, 
             -8px 8px black,
             -12px 12px black,
             -16px 16px black,
             -20px 20px black;
-            letter-spacing: -15px;
+            letter-spacing: -1.85rem;
         }
     }
 
@@ -51,6 +54,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        margin: 1.5rem 0 3rem;
     }
 
     .sword-underline{
@@ -63,17 +67,30 @@
     }
 }
 
+.title-background::before{
+    content: '';
+    position: absolute;
+    background-image: url('../Assets/bg-splash/back-heart.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 5%;
+    left: 28%;
+    width: 39.25rem;
+    height: 39.25rem;
+    z-index: -1;
+}
+
 .title-background::after{
     content: '';
     position: absolute;
     top: 0;
-    left: 118px;
+    left: 19.85rem;
     background-image: url('../Assets/bg-splash/thin-vine-border.png');
-    width: 600px;
-    height: 444px;
+    width: 52.75rem;
+    height: 39.25rem;
     // border: thin solid violet;
     background-size: contain;
     background-repeat: no-repeat;
-    transform: scaleX((1.4));
+    transform: scaleX((1.75));
     // z-index: 1;
 }

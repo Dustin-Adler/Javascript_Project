@@ -1,5 +1,258 @@
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
 @import url(https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap);
+/*!*****************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss (1) ***!
+  \*****************************************************************************************************************************************/
 @import url(https://fonts.googleapis.com/css2?family=Suez+One&display=swap);
-.title-background{position:relative;perspective:1000px;background-color:#b9caf8;box-shadow:#ffc3b1 0px 30px 60px -12px inset,#ffc3b1 0px 18px 36px -18px inset;padding:50px 50px 0px;margin-top:10vh;margin-bottom:-300px;border-radius:10px;z-index:1}.title-background .title-text{font-family:"Press Start 2P",cursive;font-size:2.75vh;text-align:justify;margin-left:3vw;margin-bottom:-7vh;letter-spacing:-2px}.title-background .main-title{font-family:"Suez One",serif;font-size:25vh;transform-origin:50% 100%;transform:rotateX(30deg);letter-spacing:-3px;color:#fe6604}.title-background .main-title .rel{margin-right:-1.1vw;text-shadow:5px 4px #000,10px 8px #000,15px 12px #000,20px 16px #000,25px 20px #000}.title-background .main-title .da{margin-left:-1.1vw;text-shadow:-4px 4px #000,-8px 8px #000,-12px 12px #000,-16px 16px #000,-20px 20px #000;letter-spacing:-15px}.title-background .sword-container{display:flex;justify-content:center;align-items:center}.title-background .sword-underline{background-image:url("../Assets/bg-splash/buster-sword.png");background-size:contain;background-repeat:no-repeat;background-position:center center;width:80%;height:210px}.title-background::after{content:"";position:absolute;top:0;left:118px;background-image:url("../Assets/bg-splash/thin-vine-border.png");width:600px;height:444px;background-size:contain;background-repeat:no-repeat;transform:scaleX(1.4)}.set-game-on-tv{display:flex;align-items:center;width:100%}#game-canvas{margin:170px 0px 45px 25px;position:relative;width:256px;height:240px;zoom:300%}.tv{background-image:url(../Assets/bg-splash/cartoon-tv.png);position:absolute;width:1161px;height:1264px}.begin{background-image:url(../Assets/tileset/start_restart_splash/beginSplash.jpg)}.end{background-image:url(../Assets/tileset/start_restart_splash/endSplash.jpg)}.win{background-image:url(../Assets/tileset/start_restart_splash/win_screen.png)}body{background-image:url(../Assets/bg-splash/blue-orange-spec-tri.png);margin:0 0;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center}.title-canvas-instructions{width:100%;height:100%}.canvas-instructions{display:flex;justify-content:center;align-items:center;width:100%}#instructions-bg{background-color:#000;border-radius:10px;padding:50px 15px 50px 15px;margin-left:2%;height:fit-content;width:fit-content;display:flex;flex-direction:column}#instructions{font-family:"Press Start 2P",cursive;color:#fff;font-size:18px;font-weight:900;max-width:550px;padding:10px}.spacer{width:50px}.hidden{visibility:collapse}.footer{height:fit-content;width:100%;display:flex;flex-direction:column;justify-content:center;align-items:center}.nes-system{background-image:url(../Assets/bg-splash/nes.png);width:523px;height:355px;transform:scale(0.8)}.heel{display:flex;justify-content:space-evenly}.heel .personal-links{display:flex;justify-content:space-evenly}.heel .p1-controller{background-image:url(../Assets/bg-splash/p1-nes-controller.png);width:525px;height:420px}.heel .p2-controller{background-image:url(../Assets/bg-splash/p2-nes-controller.png);width:560px;height:400px}html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:"";content:none}table{border-collapse:collapse;border-spacing:0}
+/*!*****************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss (2) ***!
+  \*****************************************************************************************************************************************/
+.title-background {
+  border: 1px solid transparent;
+  position: relative;
+  perspective: 1000px;
+  background-color: #b9caf8;
+  box-shadow: #ffc3b1 0rem 0rem 2.5rem 0.25rem, #ffc3b1 0rem 0rem 36rem 0rem inset;
+  padding: 50px 50px 0px;
+  margin-top: 5vh;
+  margin-bottom: -300px;
+  border-radius: 10px;
+  z-index: 1;
+}
+.title-background .title-text {
+  font-family: "Press Start 2P", cursive;
+  font-size: 2.5rem;
+  text-align: justify;
+  margin-left: 12rem;
+  margin-bottom: -9rem;
+  letter-spacing: -0.2rem;
+}
+.title-background .main-title {
+  font-family: "Suez One", serif;
+  font-size: 25rem;
+  transform-origin: 50% 100%;
+  transform: rotateX(30deg);
+  letter-spacing: -0.4rem;
+  color: #FE6604;
+  margin: 0rem 4rem 0rem;
+}
+.title-background .main-title .rel {
+  margin-right: 0rem;
+  text-shadow: 5px 4px black, 10px 8px black, 15px 12px black, 20px 16px black, 25px 20px black;
+}
+.title-background .main-title .da {
+  margin-left: -3.6rem;
+  text-shadow: -4px 4px black, -8px 8px black, -12px 12px black, -16px 16px black, -20px 20px black;
+  letter-spacing: -1.85rem;
+}
+.title-background .sword-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem 0 3rem;
+}
+.title-background .sword-underline {
+  background-image: url("../Assets/bg-splash/buster-sword.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 80%;
+  height: 210px;
+}
 
-/*# sourceMappingURL=main.css.map*/
+.title-background::before {
+  content: "";
+  position: absolute;
+  background-image: url("../Assets/bg-splash/back-heart.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 5%;
+  left: 28%;
+  width: 39.25rem;
+  height: 39.25rem;
+  z-index: -1;
+}
+
+.title-background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 19.85rem;
+  background-image: url("../Assets/bg-splash/thin-vine-border.png");
+  width: 52.75rem;
+  height: 39.25rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: scaleX(1.75);
+}
+
+.set-game-on-tv {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+#game-canvas {
+  margin: 170px 0px 45px 25px;
+  position: relative;
+  width: 256px;
+  height: 240px;
+  zoom: 300%;
+}
+
+.tv {
+  background-image: url(../Assets/bg-splash/cartoon-tv.png);
+  position: absolute;
+  width: 1161px;
+  height: 1264px;
+}
+
+.begin {
+  background-image: url(../Assets/tileset/start_restart_splash/beginSplash.jpg);
+}
+
+.end {
+  background-image: url(../Assets/tileset/start_restart_splash/endSplash.jpg);
+}
+
+.win {
+  background-image: url(../Assets/tileset/start_restart_splash/win_screen.png);
+}
+
+body {
+  background-image: url(../Assets/bg-splash/blue-orange-spec-tri.png);
+  margin: 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.title-canvas-instructions {
+  width: 100%;
+  height: 100%;
+}
+
+.canvas-instructions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#instructions-bg {
+  background-color: black;
+  border-radius: 10px;
+  padding: 50px 15px 50px 15px;
+  margin-left: 2%;
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+#instructions {
+  font-family: "Press Start 2P", cursive;
+  color: white;
+  font-size: 18px;
+  font-weight: 900;
+  max-width: 550px;
+  padding: 10px;
+}
+
+.spacer {
+  width: 50px;
+}
+
+.hidden {
+  visibility: collapse;
+}
+
+.footer {
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nes-system {
+  background-image: url(../Assets/bg-splash/nes.png);
+  width: 523px;
+  height: 355px;
+  transform: scale(0.8);
+}
+
+.heel {
+  display: flex;
+  justify-content: space-evenly;
+}
+.heel .personal-links {
+  display: flex;
+  justify-content: space-evenly;
+}
+.heel .p1-controller {
+  background-image: url(../Assets/bg-splash/p1-nes-controller.png);
+  width: 525px;
+  height: 420px;
+}
+.heel .p2-controller {
+  background-image: url(../Assets/bg-splash/p2-nes-controller.png);
+  width: 560px;
+  height: 400px;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
