@@ -1,5 +1,26 @@
+.calling-card {
+    border: thick solid violet;
+    width: fit-content;
+    height: fit-content;
+    margin-bottom: -300px;
+}
+
+.calling-card-content {
+    width: fit-content;
+    height: fit-content;
+    border: thick solid palegreen;
+    transition: 5s;
+    transform-style: preserve-3d;
+}
+
+.calling-card:hover .calling-card-content {
+    transform: rotateY(.5turn);
+}
+
 .title-background {
-    border: 1px solid transparent;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    border: 1px solid brown;
     position: relative;
     perspective: 1000px;
     background-color: #b9caf8;
@@ -7,8 +28,6 @@
         rgba(255,195,177) 0rem 0rem 2.5rem 0.25rem, 
         rgba(255,195,177) 0rem 0rem 36rem 0rem inset;
     padding: 50px 50px 0px;
-    margin-top: 5vh;
-    margin-bottom: -300px;
     border-radius: 10px;
     z-index: 1;
 
@@ -19,10 +38,12 @@
         margin-left: 12rem;
         margin-bottom: -9rem;
         letter-spacing: -0.2rem;
+        height: 100%;
     }
 
     .main-title{
         font-family: 'Suez One', serif;
+        height: 100%;
         font-size: 25rem;
         transform-origin: 50% 100%;
         transform: rotateX(30deg);
@@ -37,6 +58,7 @@
             15px 12px black,
             20px 16px black,
             25px 20px black;
+            height: 100%;
         }
 
         .da{
@@ -47,6 +69,7 @@
             -16px 16px black,
             -20px 20px black;
             letter-spacing: -1.85rem;
+            height: 100%;
         }
     }
 
@@ -55,6 +78,7 @@
         justify-content: center;
         align-items: center;
         margin: 1.5rem 0 3rem;
+        border: thin solid purple;
     }
 
     .sword-underline{
@@ -88,9 +112,7 @@
     background-image: url('../Assets/bg-splash/thin-vine-border.png');
     width: 52.75rem;
     height: 39.25rem;
-    // border: thin solid violet;
     background-size: contain;
     background-repeat: no-repeat;
     transform: scaleX((1.75));
-    // z-index: 1;
 }
