@@ -29,7 +29,6 @@
 }
 
 .title-background {
-  position: absolute;
   backface-visibility: hidden;
   transform-style: preserve-3d;
   border: 1px solid pink;
@@ -108,6 +107,128 @@
 }
 
 .title-background::after {
+  backface-visibility: hidden;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 19.85rem;
+  background-image: url("../Assets/bg-splash/thin-vine-border.png");
+  width: 52.75rem;
+  height: 39.25rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: translateZ(2rem) scaleX(1.725);
+}
+
+.credits {
+  transform: rotateY(0.5turn);
+  position: absolute;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  border: 1px solid pink;
+  perspective: 1000px;
+  background-color: #061B21;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  box-shadow: #ffc3b1 0rem 0rem 2.5rem 0.25rem, #ffc3b1 0rem 0rem 36rem 0rem inset;
+  padding: 50px 50px 0px;
+  border-radius: 10px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+}
+.credits .first-name {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  backface-visibility: hidden;
+  transform: translateZ(4rem);
+  margin-bottom: -10rem;
+}
+.credits .name-text {
+  font-family: "Press Start 2P", cursive;
+  font-size: 2.5rem;
+  letter-spacing: -0.2rem;
+  height: 100%;
+  display: flex;
+  margin-top: 1.35rem;
+}
+.credits .dustin {
+  backface-visibility: hidden;
+  font-family: "Suez One", serif;
+  font-size: 4rem;
+  letter-spacing: -0.2rem;
+  color: #FE6604;
+  text-shadow: 2px 2px whitesmoke;
+}
+.credits .last-name {
+  backface-visibility: hidden;
+  font-family: "Suez One", serif;
+  font-size: 19rem;
+  transform-origin: 50% 100%;
+  transform: translateZ(12rem) rotateX(30deg);
+  letter-spacing: -0.4rem;
+  color: #FE6604;
+  margin: 5rem 12.75rem 0rem;
+  width: 100%;
+}
+.credits .last-name .ad {
+  margin-right: 0rem;
+  text-shadow: 5px 4px whitesmoke, 10px 8px whitesmoke, 15px 12px whitesmoke, 20px 16px whitesmoke, 25px 20px whitesmoke;
+  height: 100%;
+}
+.credits .last-name .ler {
+  margin-left: -2.8rem;
+  text-shadow: -4px 4px whitesmoke, -8px 8px whitesmoke, -12px 12px whitesmoke, -16px 16px whitesmoke, -20px 20px whitesmoke;
+  height: 100%;
+}
+.credits .projects-container {
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 1.5rem 0 3rem;
+  transform: translateZ(4rem);
+  width: 80%;
+}
+.credits .mern {
+  background-image: url("../Assets/bg-splash/buster-sword.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 40%;
+  height: 210px;
+}
+.credits .full-stack {
+  background-image: url("../Assets/bg-splash/buster-sword.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 40%;
+  height: 210px;
+}
+
+.credits::before {
+  backface-visibility: hidden;
+  content: "";
+  position: absolute;
+  background-image: url("../Assets/bg-splash/back-heart.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 5%;
+  left: 28%;
+  width: 39.25rem;
+  height: 39.25rem;
+  z-index: -1;
+  transform: translateZ(3rem) scale(0.95);
+}
+
+.credits::after {
   backface-visibility: hidden;
   content: "";
   position: absolute;
