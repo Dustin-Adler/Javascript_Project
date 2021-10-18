@@ -9,6 +9,10 @@
 /*!*****************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss (2) ***!
   \*****************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Teko&display=swap);
+/*!*****************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss (3) ***!
+  \*****************************************************************************************************************************************/
 .calling-card {
   width: fit-content;
   height: fit-content;
@@ -338,46 +342,70 @@ body {
   visibility: collapse;
 }
 
-.footer {
-  height: fit-content;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .nes-system {
   background-image: url(../Assets/bg-splash/nes.png);
   width: 523px;
   height: 355px;
-  transform: scale(0.8);
-  margin-top: -70px;
+  transform: scale(0.9);
+  margin-top: -60px;
 }
 
-.heel {
+.controllers {
+  margin-top: -8vh;
+  margin-bottom: 4vh;
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
-  width: 100%;
-  margin-bottom: 3vh;
 }
-.heel .personal-links {
+
+.p1-controller {
+  background-image: url(../Assets/bg-splash/p1-nes-controller.png);
+  width: 525px;
+  height: 420px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.p2-controller {
+  background-image: url(../Assets/bg-splash/p2-nes-controller.png);
+  width: 560px;
+  height: 400px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.footer {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   background-color: black;
   color: whitesmoke;
-  width: 33%;
+  width: 100%;
   border: 5px #7e7e7e;
-  border-radius: 15%;
   border-style: groove;
   box-shadow: whitesmoke 0rem 0rem 5rem 0.025rem, whitesmoke 0rem 0rem 0.75rem 0.025rem inset;
 }
-.heel .personal-links .link {
-  width: 85%;
+.footer .farewell {
+  font-family: "Teko", sans-serif;
+  margin: 3vh 2vh;
+  font-size: 2.5rem;
 }
-.heel .personal-links i {
+.footer .farewell .thank-you {
+  font-size: 3.5rem;
+}
+.footer .personal-links {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-bottom: 5vh;
+}
+.footer .personal-links .link {
+  width: 15%;
+}
+.footer .personal-links i {
   color: whitesmoke;
   width: 100%;
   border-radius: 2.5rem;
@@ -386,30 +414,14 @@ body {
   box-sizing: border-box;
   font-size: 5rem;
   color: white;
-  background-color: hotpink;
+  background-color: #FE6604;
   box-shadow: whitesmoke 0rem 0rem 0.75rem 0.025rem;
   transition: 0.5s;
   padding: 1%;
 }
-.heel .personal-links i:hover {
-  background-color: yellowgreen;
+.footer .personal-links i:hover {
+  background-color: #B9CAF8;
   transform: scale(1.1);
-}
-.heel .p1-controller {
-  background-image: url(../Assets/bg-splash/p1-nes-controller.png);
-  width: 525px;
-  height: 420px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-.heel .p2-controller {
-  background-image: url(../Assets/bg-splash/p2-nes-controller.png);
-  width: 560px;
-  height: 400px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
 }
 
 html, body, div, span, applet, object, iframe,
