@@ -91,31 +91,32 @@
         width: 80%;
     }
 
-    .mern {
+    a {
         box-sizing: border-box;
-        background-image: url('../Assets/bg-splash/cwm-logo.png');
-        background-color: lightblue;
-        border: medium solid white;
         border-radius: 8px;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
         width: 40%;
         height: 180px;
+        transition: 0.5s;
+    }
+
+    a:hover {
+        transform: scale(1.05)
+    }
+
+    .mern {
+        background-image: url('../Assets/bg-splash/cwm-logo.png');
+        background-color: lightblue;
+        border: medium solid white;
     }
 
     .full-stack {
         background-image: url('../Assets/bg-splash/craftesy.png');
-        box-sizing: border-box;
         background-color: rgba(22,20,54,1);
         border: 10px solid whitesmoke;
         border-style: double;
-        border-radius: 8px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center center;
-        width: 40%;
-        height: 180px;
     }
 
 }

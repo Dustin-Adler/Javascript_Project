@@ -198,30 +198,29 @@
   transform: translateZ(6rem);
   width: 80%;
 }
-.credits .mern {
+.credits a {
   box-sizing: border-box;
+  border-radius: 8px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 40%;
+  height: 180px;
+  transition: 0.5s;
+}
+.credits a:hover {
+  transform: scale(1.05);
+}
+.credits .mern {
   background-image: url("../Assets/bg-splash/cwm-logo.png");
   background-color: lightblue;
   border: medium solid white;
-  border-radius: 8px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 40%;
-  height: 180px;
 }
 .credits .full-stack {
   background-image: url("../Assets/bg-splash/craftesy.png");
-  box-sizing: border-box;
   background-color: #161436;
   border: 10px solid whitesmoke;
   border-style: double;
-  border-radius: 8px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 40%;
-  height: 180px;
 }
 
 .credits::before {
