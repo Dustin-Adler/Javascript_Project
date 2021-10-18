@@ -12,28 +12,74 @@
     width: 523px;
     height: 355px;
     transform: scale(0.8);
-    // margin-top: -70px;
-    // border: thick solid purple;
+    margin-top: -70px;
 }
 
 .heel {
     display: flex;
     justify-content: space-evenly;
+    width: 100%;
+    margin-bottom: 3vh;
 
     .personal-links{
         display: flex;
+        flex-direction: column;
         justify-content: space-evenly;
+        align-items: center;
+        background-color: black;
+        color: whitesmoke;
+        width: 33%;
+        border: 5px rgb(126, 126, 126);
+        border-radius: 15%;
+        border-style: groove;
+        box-shadow: 
+        whitesmoke 0rem 0rem 5rem 0.025rem, 
+        whitesmoke 0rem 0rem 0.75rem 0.025rem inset;
+
+        .link {
+            width: 85%;
+        }
+
+        i {
+            color:whitesmoke;
+            width: 100%;
+            border-radius: 2.5rem;
+            border: thick solid whitesmoke;
+            border-radius: 2.5rem;
+            box-sizing: border-box;
+            font-size: 5rem;
+            color: white;
+            background-color: hotpink;
+            box-shadow:
+            whitesmoke 0rem 0rem 0.75rem 0.025rem;
+            transition: 0.5s;
+            padding: 1%;
+        }
+
+        i:hover{
+            background-color: yellowgreen;
+            transform: scale(1.1)
+        }
+        
     }
+
+
 
     .p1-controller {
         background-image: url(../Assets/bg-splash/p1-nes-controller.png);
         width: 525px;
         height: 420px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
     }
 
     .p2-controller {
         background-image: url(../Assets/bg-splash/p2-nes-controller.png);
         width: 560px;
         height: 400px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
     }
 }
