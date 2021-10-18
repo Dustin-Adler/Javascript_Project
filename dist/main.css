@@ -14,6 +14,7 @@
   height: fit-content;
   margin-bottom: -300px;
   margin-top: 5vh;
+  min-width: 1485px;
 }
 
 .calling-card-content {
@@ -50,7 +51,7 @@
   margin-bottom: -10rem;
   letter-spacing: -0.2rem;
   height: 100%;
-  transform: translateZ(4rem);
+  transform: translateZ(5rem);
 }
 .title-background .main-title {
   backface-visibility: hidden;
@@ -80,7 +81,7 @@
   justify-content: center;
   align-items: center;
   margin: 1.5rem 0 3rem;
-  transform: translateZ(4rem);
+  transform: translateZ(6rem);
 }
 .title-background .sword-underline {
   background-image: url("../Assets/bg-splash/buster-sword.png");
@@ -89,6 +90,7 @@
   background-position: center center;
   width: 80%;
   height: 210px;
+  transform: scale(0.9);
 }
 
 .title-background::before {
@@ -147,7 +149,7 @@
   justify-content: space-between;
   width: 60%;
   backface-visibility: hidden;
-  transform: translateZ(4rem);
+  transform: translateZ(5rem);
   margin-bottom: -10rem;
 }
 .credits .name-text {
@@ -193,24 +195,33 @@
   justify-content: space-evenly;
   align-items: center;
   margin: 1.5rem 0 3rem;
-  transform: translateZ(4rem);
+  transform: translateZ(6rem);
   width: 80%;
 }
 .credits .mern {
-  background-image: url("../Assets/bg-splash/buster-sword.png");
+  box-sizing: border-box;
+  background-image: url("../Assets/bg-splash/cwm-logo.png");
+  background-color: lightblue;
+  border: medium solid white;
+  border-radius: 8px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
   width: 40%;
-  height: 210px;
+  height: 180px;
 }
 .credits .full-stack {
-  background-image: url("../Assets/bg-splash/buster-sword.png");
+  background-image: url("../Assets/bg-splash/craftesy.png");
+  box-sizing: border-box;
+  background-color: #161436;
+  border: 10px solid whitesmoke;
+  border-style: double;
+  border-radius: 8px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
   width: 40%;
-  height: 210px;
+  height: 180px;
 }
 
 .credits::before {

@@ -27,7 +27,7 @@
         justify-content: space-between;
         width: 60%;
         backface-visibility: hidden;
-        transform: translateZ(4rem);
+        transform: translateZ(5rem);
         margin-bottom: -10rem;
     }
 
@@ -87,26 +87,37 @@
         justify-content: space-evenly;
         align-items: center;
         margin: 1.5rem 0 3rem;
-        transform: translateZ(4rem);
+        transform: translateZ(6rem);
         width: 80%;
     }
 
-    .mern{
-        background-image: url('../Assets/bg-splash/buster-sword.png');
+    .mern {
+        box-sizing: border-box;
+        background-image: url('../Assets/bg-splash/cwm-logo.png');
+        background-color: lightblue;
+        border: medium solid white;
+        border-radius: 8px;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
         width: 40%;
-        height: 210px;
+        height: 180px;
     }
-    .full-stack{
-        background-image: url('../Assets/bg-splash/buster-sword.png');
+
+    .full-stack {
+        background-image: url('../Assets/bg-splash/craftesy.png');
+        box-sizing: border-box;
+        background-color: rgba(22,20,54,1);
+        border: 10px solid whitesmoke;
+        border-style: double;
+        border-radius: 8px;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
         width: 40%;
-        height: 210px;
+        height: 180px;
     }
+
 }
 
 .credits::before{

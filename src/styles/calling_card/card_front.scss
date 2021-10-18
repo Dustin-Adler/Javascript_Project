@@ -3,6 +3,7 @@
     height: fit-content;
     margin-bottom: -300px;
     margin-top: 5vh;
+    min-width: 1485px;
 }
 
 .calling-card-content {
@@ -41,7 +42,7 @@
         margin-bottom: -10rem;
         letter-spacing: -0.2rem;
         height: 100%;
-        transform: translateZ(4rem)
+        transform: translateZ(5rem)
     }
 
     .main-title{
@@ -83,7 +84,7 @@
         justify-content: center;
         align-items: center;
         margin: 1.5rem 0 3rem;
-        transform: translateZ(4rem)
+        transform: translateZ(6rem)
     }
 
     .sword-underline{
@@ -93,6 +94,7 @@
         background-position: center center;
         width: 80%;
         height: 210px;
+        transform: scale(0.9)
     }
 }
 
