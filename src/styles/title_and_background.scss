@@ -27,10 +27,11 @@ body {
 #instructions-bg{
     background-color: black;
     border-radius: 10px;
+    max-width: 15%;
     padding: 50px 15px 50px 15px;
     margin-left: 2%;
     height: fit-content;
-    width: fit-content;
+    // width: fit-content;
     display: flex;
     flex-direction: column;
 }
