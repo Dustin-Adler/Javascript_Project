@@ -1,21 +1,24 @@
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
-@import url(https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Teko&display=swap);
 /*!*****************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss (1) ***!
   \*****************************************************************************************************************************************/
-@import url(https://fonts.googleapis.com/css2?family=Suez+One&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap);
 /*!*****************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss (2) ***!
   \*****************************************************************************************************************************************/
-@import url(https://fonts.googleapis.com/css2?family=Teko&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Suez+One&display=swap);
 /*!*****************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss (3) ***!
   \*****************************************************************************************************************************************/
+header {
+  display: flex;
+  justify-content: center;
+}
+
 .calling-card {
-  width: fit-content;
-  height: fit-content;
   margin-bottom: -300px;
   margin-top: 5vh;
   min-width: 1485px;
@@ -67,14 +70,15 @@
   letter-spacing: -0.4rem;
   color: #FE6604;
   margin: 5rem 12.75rem 0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .title-background .main-title .rel {
-  margin-right: 0rem;
   text-shadow: 5px 4px black, 10px 8px black, 15px 12px black, 20px 16px black, 25px 20px black;
   height: 100%;
 }
 .title-background .main-title .da {
-  margin-left: -3.6rem;
   text-shadow: -4px 4px black, -8px 8px black, -12px 12px black, -16px 16px black, -20px 20px black;
   letter-spacing: -1.85rem;
   height: 100%;
@@ -259,7 +263,6 @@
 .set-game-on-tv {
   display: flex;
   align-items: center;
-  width: 100%;
 }
 
 #game-canvas {
@@ -291,71 +294,91 @@
   background-image: url(../Assets/tileset/start_restart_splash/win_screen.png);
 }
 
-body {
+.body {
   background-image: url(../Assets/bg-splash/blue-orange-spec-tri.png);
   margin: 0 0;
+  padding: 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
   text-align: center;
-}
-
-.title-canvas-instructions {
-  width: 100%;
-  height: 100%;
 }
 
 .canvas-instructions {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  width: 100%;
 }
 
 #instructions-bg {
   background-color: black;
   border-radius: 10px;
-  max-width: 15%;
+  max-width: 20%;
+  min-width: 5%;
   padding: 50px 15px 50px 15px;
-  margin-left: 2%;
-  height: fit-content;
+  margin-left: 1%;
+  margin-top: 10%;
   display: flex;
   flex-direction: column;
+  height: fit-content;
+  overflow: hidden;
 }
 
 #instructions {
   font-family: "Press Start 2P", cursive;
   color: white;
-  font-size: 18px;
+  font-size: 1.25vw;
   font-weight: 900;
   max-width: 550px;
   padding: 10px;
-}
-
-.spacer {
-  width: 50px;
 }
 
 .hidden {
   visibility: collapse;
 }
 
+.nes-scale {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.console-scale {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+}
+
+.nes-spacer {
+  width: 40%;
+  height: 100%;
+}
+
+.controller-spacer {
+  width: 11%;
+  height: 100%;
+}
+
 .nes-system {
   background-image: url(../Assets/bg-splash/nes.png);
   width: 523px;
   height: 355px;
-  transform: scale(0.9);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
   margin-top: -60px;
 }
 
 .controllers {
   margin-top: -8vh;
-  margin-bottom: 4vh;
+  margin-bottom: 2%;
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .p1-controller {
@@ -383,7 +406,7 @@ body {
   align-items: center;
   background-color: black;
   color: whitesmoke;
-  width: 100%;
+  width: 100vw;
   border: 5px #7e7e7e;
   border-style: groove;
   box-shadow: whitesmoke 0rem 0rem 5rem 0.025rem, whitesmoke 0rem 0rem 0.75rem 0.025rem inset;
@@ -424,6 +447,116 @@ body {
   transform: scale(1.1);
 }
 
+@media (min-width: 1550px) {
+  .set-game-on-tv {
+    z-index: -1;
+    margin-left: 1%;
+  }
+
+  #instructions {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 1550px) {
+  .calling-card {
+    transform: scale(0.9);
+  }
+
+  .set-game-on-tv {
+    transform: scale(0.9);
+    z-index: -1;
+    margin-left: 0%;
+  }
+
+  #instructions-bg {
+    margin-right: -1%;
+  }
+
+  .canvas-instructions {
+    margin-top: -5%;
+    margin-bottom: -5%;
+  }
+}
+@media (max-width: 1460px) {
+  .calling-card {
+    transform: scale(0.8);
+  }
+
+  .set-game-on-tv {
+    transform: scale(0.8);
+    z-index: -1;
+    margin-left: -3%;
+  }
+
+  #instructions-bg {
+    margin-right: -2%;
+  }
+
+  .canvas-instructions {
+    margin-top: -10%;
+    margin-bottom: -10%;
+  }
+}
+@media (max-width: 1375px) {
+  .calling-card {
+    transform: scale(0.7);
+  }
+
+  .set-game-on-tv {
+    transform: scale(0.7);
+    z-index: -1;
+    margin-left: -6%;
+  }
+
+  #instructions-bg {
+    margin-right: -3%;
+  }
+
+  .canvas-instructions {
+    margin-top: -15%;
+    margin-bottom: -15%;
+  }
+}
+@media (max-width: 1200px) {
+  .calling-card {
+    transform: scale(0.6);
+  }
+
+  .set-game-on-tv {
+    transform: scale(0.6);
+    z-index: -1;
+    margin-left: -7%;
+  }
+
+  #instructions-bg {
+    margin-right: -5%;
+  }
+
+  .canvas-instructions {
+    margin-top: -20%;
+    margin-bottom: -20%;
+  }
+}
+@media (max-width: 1050px) {
+  .calling-card {
+    transform: scale(0.5);
+  }
+
+  .set-game-on-tv {
+    transform: scale(0.5);
+    z-index: -1;
+    margin-left: -8%;
+  }
+
+  #instructions-bg {
+    margin-right: -7%;
+  }
+
+  .canvas-instructions {
+    margin-top: -25%;
+    margin-bottom: -25%;
+  }
+}
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,

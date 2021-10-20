@@ -1,0 +1,115 @@
+@media (min-width: 1550px) {
+    .set-game-on-tv{
+        z-index: -1;
+        margin-left: 1%;
+    }
+
+    #instructions {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 1550px) {
+    .calling-card {
+        transform: scale(0.9);
+    }
+
+    .set-game-on-tv{
+        transform: scale(0.9);
+        z-index: -1;
+        margin-left: -0%;
+    }
+
+    #instructions-bg {
+        margin-right: -1%
+    }
+
+    .canvas-instructions {
+        margin-top: -5%;
+        margin-bottom: -5%;
+    }
+}
+
+@media (max-width: 1460px) {
+    .calling-card {
+        transform: scale(0.8);
+    }
+
+    .set-game-on-tv{
+        transform: scale(0.8);
+        z-index: -1;
+        margin-left: -3%;
+    }
+
+    #instructions-bg {
+        margin-right: -2%
+    }
+
+    .canvas-instructions {
+        margin-top: -10%;
+        margin-bottom: -10%;
+    }
+}
+
+@media (max-width: 1375px) {
+    .calling-card {
+        transform: scale(0.7);
+    }
+
+    .set-game-on-tv{
+        transform: scale(0.7);
+        z-index: -1;
+        margin-left: -6%;
+    }
+
+    #instructions-bg {
+        margin-right: -3%
+    }
+
+    .canvas-instructions {
+        margin-top: -15%;
+        margin-bottom: -15%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .calling-card {
+        transform: scale(0.6);
+    }
+
+    .set-game-on-tv{
+        transform: scale(0.6);
+        z-index: -1;
+        margin-left: -7%;
+    }
+
+    #instructions-bg {
+        margin-right: -5%
+    }
+
+    .canvas-instructions {
+        margin-top: -20%;
+        margin-bottom: -20%;
+    }
+}
+
+@media (max-width: 1050px) {
+    .calling-card {
+        transform: scale(0.5);
+    }
+
+    .set-game-on-tv{
+        transform: scale(0.5);
+        z-index: -1;
+        margin-left: -8%;
+    }
+
+    #instructions-bg {
+        margin-right: -7%
+    }
+
+    .canvas-instructions {
+        margin-top: -25%;
+        margin-bottom: -25%;
+    }
+}
