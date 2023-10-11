@@ -39,32 +39,32 @@ class Dragon {
             velocityY: 0,
             health: 20,
             }
-            this.head2 = {
-                name: 2, 
-                w: 10,  
-                h: 16,  
-                x: 123,  
-                y: 68,
-                dx: 83,
-                dy: 0,
-                radius: 14,
-                radians: 0,
-                velocity: 0.05,
-                health: 20,
-                }
-                this.head3 = {
-                    name: 3,
-                    w: 10,  
-                    h: 16,  
-                    x: 143,  
-                    y: 60,
-                    dx: 83,
-                    dy: 0,
-                    radius: 14,
-                    radians: 0,
-                    velocity: 0.05,
-                    health: 20,
-                    }
+        this.head2 = {
+            name: 2, 
+            w: 10,  
+            h: 16,  
+            x: 123,  
+            y: 68,
+            dx: 83,
+            dy: 0,
+            radius: 14,
+            radians: 0,
+            velocity: 0.05,
+            health: 20,
+            }
+        this.head3 = {
+            name: 3,
+            w: 10,  
+            h: 16,  
+            x: 143,  
+            y: 60,
+            dx: 83,
+            dy: 0,
+            radius: 14,
+            radians: 0,
+            velocity: 0.05,
+            health: 20,
+            }
         this.liveHeads = [this.head1, this.head2, this.head3]
         this.deadHeads = {
             w: 16,  

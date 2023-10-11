@@ -40,7 +40,7 @@ class Player {
         this.draw();
         this.move();
         this.animationFrame();
-        this.deathCheck()
+        this.deathCheck();
     }
 
     
