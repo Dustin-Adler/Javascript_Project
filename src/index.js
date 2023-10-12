@@ -38,7 +38,7 @@ addEventListener('DOMContentLoaded', function() {
     const callingCardContent = document.getElementsByClassName("calling-card-content");
     flipButton.forEach(button => {
         button.addEventListener("click", event => {
-            callingCard[0].classList.toggle('flip-card');
+            // callingCard[0].classList.toggle('flip-card');
             callingCardContent[0].classList.toggle('flip-card');
         })
     });
