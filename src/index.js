@@ -17,7 +17,7 @@ addEventListener('DOMContentLoaded', function() {
         } else if (e.code === "Enter" && !game.onGoingGame ) {
             location.reload()
         }
-    })
+    });
 
     setInterval(function() {
         if (game.player.dead) {
@@ -31,7 +31,8 @@ addEventListener('DOMContentLoaded', function() {
             beforeGame.classList.add("win")
         }
 
-    })
+    });
+
     const flipButton = document.getElementsByClassName("flip-button");
     const callingCard = document.getElementsByClassName("calling-card");
     const callingCardContent = document.getElementsByClassName("calling-card-content");
