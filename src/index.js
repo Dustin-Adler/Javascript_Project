@@ -34,7 +34,7 @@ addEventListener('DOMContentLoaded', function() {
     });
 
     const flipButton = document.getElementsByClassName("flip-button");
-    const callingCard = document.getElementsByClassName("calling-card");
+    // const callingCard = document.getElementsByClassName("calling-card");
     const callingCardContent = document.getElementsByClassName("calling-card-content");
     flipButton.forEach(button => {
         button.addEventListener("click", event => {
