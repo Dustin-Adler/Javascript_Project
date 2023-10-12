@@ -32,5 +32,13 @@ addEventListener('DOMContentLoaded', function() {
         }
 
     })
-    // const tag = document.getElementById("description")
+    const flipButton = document.getElementsByClassName("flip-button");
+    const callingCard = document.getElementsByClassName("calling-card");
+    const callingCardContent = document.getElementsByClassName("calling-card-content");
+    flipButton.forEach(button => {
+        button.addEventListener("click", event => {
+            callingCard[0].classList.toggle('flip-card');
+            callingCardContent[0].classList.toggle('flip-card');
+        })
+    });
 })

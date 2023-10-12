@@ -7,3 +7,7 @@
 // }
 
 // scale();
+
+// .calling-card:hover .calling-card-content {
+//   transform: rotateY(.5turn);
+// }

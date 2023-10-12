@@ -28,12 +28,23 @@ header {
   width: fit-content;
   height: fit-content;
   position: relative;
-  transition: 5s;
+  transition: 3s;
+  transition-timing-function: ease-in-out;
   transform-style: preserve-3d;
 }
 
-.calling-card:hover .calling-card-content {
+.flip-card {
   transform: rotateY(0.5turn);
+}
+
+.flip-button {
+  z-index: 10;
+  width: 50%;
+  height: 50px;
+  transform-style: preserve-3d;
+  border-radius: 10px;
+  position: relative;
+  transform: translateZ(15rem);
 }
 
 .title-background {
