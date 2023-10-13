@@ -14,14 +14,13 @@ class Sound {
         this.reveal_item.src = "./Assets/sound/reveal_item.wav"
         this.take_dmg = new Audio();
         this.take_dmg.src = "./Assets/sound/take_dmg.wav"
-        this.deathScrean = new Audio();
-        this.deathScrean.src = "./Assets/sound/ganon_laugh.wav"
+        this.deathScreen = new Audio();
+        this.deathScreen.src = "./Assets/sound/ganon_laugh.wav"
     }
 
     pauseAllSounds() {
         this.attack.pause();
         this.battleSong.pause();
-        this.death.pause();
         this.enemy_hit.pause();
         this.fanfare.pause();
         this.reveal_item.pause();
@@ -29,22 +28,27 @@ class Sound {
     }
 
     deathScreenSound(){
-        this.deathScrean.play();
+        this.deathScreen.play();
     }
 
     attackSound() {
-        this.attack.play();
         this.attack.volume = 0.7
+        this.attack.play();
     }
 
     startBattleSong() {
-        this.battleSong.play();
         this.battleSong.volume = 0.1 
-    } 
+        this.battleSong.play();
+    }
+
+    stopBattleSong() {
+        this.battleSong.pause();
+    }
 
     deathSound() {
+        this.death.volume = 0.7;
         this.death.play();
-        this.death.volume = 0.7
+        setTimeout(() => {this.deathScreen.play();}, 2500)
     }
 
     enemyHitSound() {
@@ -56,8 +60,8 @@ class Sound {
     }
 
     revealItemSound() {
+        this.reveal_item.volume = 0.6;
         this.reveal_item.play();
-        this.reveal_item.volume = 0.8
     }
 
     playerTakeDmgSound() {

@@ -5,7 +5,8 @@ addEventListener('DOMContentLoaded', function() {
     const beforeGame = document.getElementById('game-canvas')
     const ctx = beforeGame.getContext('2d')
     beforeGame.classList.add("begin")
-    const game = new Game(); 
+    const game = new Game();
+    const sounds = new Sound();
     const tag = document.getElementById("instructions")
     const instructions = document.getElementById('instructions-bg')
     addEventListener("keydown", function(e){
@@ -34,12 +35,12 @@ addEventListener('DOMContentLoaded', function() {
     });
 
     const flipButton = document.getElementsByClassName("flip-button");
-    // const callingCard = document.getElementsByClassName("calling-card");
     const callingCardContent = document.getElementsByClassName("calling-card-content");
     flipButton.forEach(button => {
         button.addEventListener("click", event => {
-            // callingCard[0].classList.toggle('flip-card');
             callingCardContent[0].classList.toggle('flip-card');
+            if (callingCardContent[0].classList.contains('flip-card')) sounds.fanfareSound();
+            // sounds.revealItemSound();
         })
     });
 })

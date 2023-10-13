@@ -19,7 +19,7 @@ class Game {
         this.maps = new MapLayouts();
         this.currentMap = this.maps.bossChamber
         this.draw = this.draw.bind(this)
-        this.player = new Player(this.ctx, this.canvas)
+        this.player = new Player(this.ctx, this.canvas, this.sounds)
         this.dragon = new Dragon(this.ctx, this.canvas)
         this.items = new Items(this.ctx, this.canvas)
         this.ui = new Ui(this.ctx, this.canvas)
@@ -66,18 +66,17 @@ class Game {
             this.ctx.clearRect(0,0,this.width,this.height);
             window.cancelAnimationFrame(frame)
             this.onGoingGame = false
-            this.sounds.pauseAllSounds()
+            this.sounds.pauseAllSounds();
         }
     }
 
     currentWinCondition() {
         if (this.items.win) {
-            this.win = true
+            this.win = true;
         }
     }
 
     draw() {
-        // this.sounds.startBattleSong();
         this.listeners();
         let setFPS = setTimeout(() => {
             this.ctx.clearRect(0,0,this.width,this.height);

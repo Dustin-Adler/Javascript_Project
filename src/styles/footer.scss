@@ -42,17 +42,37 @@
             border-radius: 2.5rem;
             box-sizing: border-box;
             font-size: 5rem;
-            color: white;
+            color: whitesmoke;
             background-color: #FE6604;
             box-shadow:
             whitesmoke 0rem 0rem 0.75rem 0.025rem;
-            transition: 0.5s;
             padding: 1%;
         }
 
         i:hover{
-            background-color: #B9CAF8;
-            transform: scale(1.1)
+            animation: pro-links 1.75s ease-in-out 0s infinite;
+        }
+
+        @keyframes pro-links {
+            0% {
+                background-color: #FE6604;
+                box-shadow:
+                whitesmoke 0rem 0rem 0.75rem 0.025rem;
+                color: whitesmoke;
+            }
+            50% {
+                background-color: #B9CAF8;
+                transform: scale(1.05);
+                box-shadow:
+                #B9CAF8 0rem 0rem 1.25rem 0.25rem;
+                color: white;
+            }
+            100% {
+                background-color: #FE6604;
+                box-shadow:
+                whitesmoke 0rem 0rem 0.75rem 0.025rem;
+                color: whitesmoke;
+            }
         }
         
     }

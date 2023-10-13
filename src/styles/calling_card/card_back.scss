@@ -22,6 +22,13 @@
     align-items: center;
     color: whitesmoke;
 
+    .flip-button:hover {
+        background-color: #fa802f;
+        transform: translateZ(15rem) scale(1.05);
+        box-shadow:
+        #fa802f 0rem 0rem 1.5rem 0.25rem;
+    }
+
     .first-name {
         display: flex;
         justify-content: space-between;
@@ -103,7 +110,22 @@
     }
 
     a:hover {
-        transform: scale(1.05)
+        animation-name: link-pulse;
+        animation-duration: 1.25s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+
+    @keyframes link-pulse {
+        0%{
+        }
+        50%{
+            transform: scale(1.025);
+            box-shadow:
+            whitesmoke 0rem 0rem 1.5rem 0.25rem;
+        }
+        100%{
+        }
     }
 
     .mern {
@@ -118,7 +140,6 @@
         border: 10px solid whitesmoke;
         border-style: double;
     }
-
 }
 
 .credits::before{
@@ -140,12 +161,12 @@
     backface-visibility: hidden;
     content: '';
     position: absolute;
-    top: 0;
+    top: 1.75rem;
     left: 19.85rem;
     background-image: url('../Assets/bg-splash/thin-vine-border.png');
     width: 52.75rem;
     height: 39.25rem;
     background-size: contain;
     background-repeat: no-repeat;
-    transform: translateZ(2rem) scaleX((1.725));
+    transform: translateZ(2rem) scaleX(1.725) scaleY(1.075);
 }

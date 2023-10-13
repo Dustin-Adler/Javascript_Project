@@ -1,7 +1,29 @@
 header {
     display: flex;
     justify-content: center;
+
+    .flip-button {
+        width: 50%;
+        height: 50px;
+        transform-style: preserve-3d;
+        position: relative;
+        transform: translateZ(15rem);
+        color:whitesmoke;
+        border-radius: 2.5rem;
+        border: thick solid whitesmoke;
+        border-radius: 2.5rem;
+        box-sizing: border-box;
+        font-size: 2rem;
+        color: white;
+        background-color: #FE6604;
+        box-shadow:
+        whitesmoke 0rem 0rem 0.75rem 0.025rem;
+        transition: 0.5s;
+    }
+
 }
+
+
 
 .calling-card {
     margin-bottom: -300px;
@@ -18,26 +40,8 @@ header {
     transform-style: preserve-3d;
 }
 
-// .calling-card:hover .calling-card-content {
-//     transform: rotateY(.5turn);
-// }
-
-// .calling-card:hover .calling-card-content{
-//     transform: rotateY(.5turn)
-// }
-
 .flip-card {
     transform: rotateY(.5turn);
-}
-
-.flip-button {
-    z-index: 10;
-    width: 50%;
-    height: 50px;
-    transform-style: preserve-3d;
-    border-radius: 10px;
-    position: relative;
-    transform: translateZ(15rem);
 }
 
 .title-background {
@@ -53,6 +57,34 @@ header {
     padding: 50px 50px 0px;
     border-radius: 10px;
     z-index: 1;
+
+    .flip-button:hover {
+        animation-name: button-pulse;
+        animation-duration: 1.25s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+
+    @keyframes button-pulse {
+        0%{
+            background-color: #FE6604;
+            box-shadow:
+            whitesmoke 0rem 0rem 0.75rem 0.025rem;
+            transform: translateZ(15rem);
+        }
+        50%{
+            background-color: #fa802f;
+            transform: translateZ(15rem) scale(1.05);
+            box-shadow:
+            #fa802f 0rem 0rem 1.5rem 0.25rem;
+        }
+        100%{
+            background-color: #FE6604;
+            box-shadow:
+            whitesmoke 0rem 0rem 0.75rem 0.025rem;
+            transform: translateZ(15rem);
+        }
+    }
 
     .title-text{
         backface-visibility: hidden;
@@ -141,12 +173,12 @@ header {
     backface-visibility: hidden;
     content: '';
     position: absolute;
-    top: 0;
+    top: 1.75rem;
     left: 19.85rem;
     background-image: url('../Assets/bg-splash/thin-vine-border.png');
     width: 52.75rem;
     height: 39.25rem;
     background-size: contain;
     background-repeat: no-repeat;
-    transform: translateZ(2rem) scaleX((1.725));
+    transform: translateZ(2rem) scaleX(1.725) scaleY(1.075);
 }

@@ -2,10 +2,10 @@ import Sound from "./sound";
 
 class Player {
 
-    constructor(ctx, canvas) {
+    constructor(ctx, canvas, gameSounds) {
         this.ctx = ctx;
         this.canvas = canvas;
-        this.sounds = new Sound();
+        this.sounds = gameSounds;
         this.mcSprite = new Image();
         this.mcSprite.src = "./Assets/tileset/mcMasterSheet.png";
         this.left_right_attack = new Image();
@@ -63,11 +63,11 @@ class Player {
     deathCheck() {
         if (this.health >= 10) {
             if (this.dead === false) {
-                this.sounds.deathSound()
+                this.sounds.deathSound();
             }
             this.dead = true;
-            // this.sounds.startBattleSong.stop
         }
+        this.sounds.startBattleSong();
     }
 
     draw() {

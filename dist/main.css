@@ -1,6 +1,679 @@
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
 @import url(https://fonts.googleapis.com/css2?family=Teko&display=swap);
+/*!*****************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss (1) ***!
+  \*****************************************************************************************************************************************/
 @import url(https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap);
+/*!*****************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss (2) ***!
+  \*****************************************************************************************************************************************/
 @import url(https://fonts.googleapis.com/css2?family=Suez+One&display=swap);
-header{display:flex;justify-content:center}.calling-card{margin-bottom:-300px;margin-top:5vh;min-width:1485px}.calling-card-content{width:fit-content;height:fit-content;position:relative;transition:3s;transition-timing-function:ease-in-out;transform-style:preserve-3d}.flip-card{transform:rotateY(0.5turn)}.flip-button{z-index:10;width:50%;height:50px;transform-style:preserve-3d;border-radius:10px;position:relative;transform:translateZ(15rem)}.title-background{backface-visibility:hidden;transform-style:preserve-3d;border:1px solid pink;position:relative;perspective:1000px;background-color:#b9caf8;box-shadow:#ffc3b1 0rem 0rem 2.5rem .25rem,#ffc3b1 0rem 0rem 36rem 0rem inset;padding:50px 50px 0px;border-radius:10px;z-index:1}.title-background .title-text{backface-visibility:hidden;font-family:"Press Start 2P",cursive;font-size:2.5rem;text-align:justify;margin-top:1rem;margin-left:13.25rem;margin-bottom:-10rem;letter-spacing:-0.2rem;height:100%;transform:translateZ(5rem)}.title-background .main-title{backface-visibility:hidden;font-family:"Suez One",serif;height:100%;font-size:20rem;transform-origin:50% 100%;transform:translateZ(12rem) rotateX(30deg);letter-spacing:-0.4rem;color:#fe6604;margin:5rem 12.75rem 0rem;display:flex;justify-content:center;align-items:center}.title-background .main-title .rel{text-shadow:5px 4px #000,10px 8px #000,15px 12px #000,20px 16px #000,25px 20px #000;height:100%}.title-background .main-title .da{text-shadow:-4px 4px #000,-8px 8px #000,-12px 12px #000,-16px 16px #000,-20px 20px #000;letter-spacing:-1.85rem;height:100%}.title-background .sword-container{backface-visibility:hidden;display:flex;justify-content:center;align-items:center;margin:1.5rem 0 3rem;transform:translateZ(6rem)}.title-background .sword-underline{background-image:url("../Assets/bg-splash/buster-sword.png");background-size:contain;background-repeat:no-repeat;background-position:center center;width:80%;height:210px;transform:scale(0.9)}.title-background::before{backface-visibility:hidden;content:"";position:absolute;background-image:url("../Assets/bg-splash/back-heart.png");background-size:contain;background-repeat:no-repeat;top:5%;left:28%;width:39.25rem;height:39.25rem;z-index:-1;transform:translateZ(3rem) scale(0.95)}.title-background::after{backface-visibility:hidden;content:"";position:absolute;top:0;left:19.85rem;background-image:url("../Assets/bg-splash/thin-vine-border.png");width:52.75rem;height:39.25rem;background-size:contain;background-repeat:no-repeat;transform:translateZ(2rem) scaleX(1.725)}.credits{transform:rotateY(0.5turn);position:absolute;backface-visibility:hidden;transform-style:preserve-3d;border:1px solid pink;perspective:1000px;background-color:#061b21;top:0;left:0;bottom:0;right:0;box-shadow:#ffc3b1 0rem 0rem 2.5rem .25rem,#ffc3b1 0rem 0rem 36rem 0rem inset;padding:50px 50px 0px;border-radius:10px;z-index:1;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#f5f5f5}.credits .first-name{display:flex;justify-content:space-between;width:60%;backface-visibility:hidden;transform:translateZ(5rem);margin-bottom:-10rem}.credits .name-text{font-family:"Press Start 2P",cursive;font-size:2.5rem;letter-spacing:-0.2rem;height:100%;display:flex;margin-top:1.35rem}.credits .dustin{backface-visibility:hidden;font-family:"Suez One",serif;font-size:4rem;letter-spacing:-0.2rem;color:#fe6604;text-shadow:2px 2px #f5f5f5}.credits .last-name{backface-visibility:hidden;font-family:"Suez One",serif;font-size:19rem;transform-origin:50% 100%;transform:translateZ(12rem) rotateX(30deg);letter-spacing:-0.4rem;color:#fe6604;margin:5rem 12.75rem 0rem;width:100%}.credits .last-name .ad{margin-right:0rem;text-shadow:5px 4px #f5f5f5,10px 8px #f5f5f5,15px 12px #f5f5f5,20px 16px #f5f5f5,25px 20px #f5f5f5;height:100%}.credits .last-name .ler{margin-left:-2.8rem;text-shadow:-4px 4px #f5f5f5,-8px 8px #f5f5f5,-12px 12px #f5f5f5,-16px 16px #f5f5f5,-20px 20px #f5f5f5;height:100%}.credits .projects-container{backface-visibility:hidden;display:flex;justify-content:space-evenly;align-items:center;margin:1.5rem 0 3rem;transform:translateZ(6rem);width:80%}.credits a{box-sizing:border-box;border-radius:8px;background-size:contain;background-repeat:no-repeat;background-position:center center;width:40%;height:180px;transition:.5s}.credits a:hover{transform:scale(1.05)}.credits .mern{background-image:url("../Assets/bg-splash/cwm-logo.png");background-color:#add8e6;border:medium solid #fff}.credits .full-stack{background-image:url("../Assets/bg-splash/craftesy.png");background-color:#161436;border:10px solid #f5f5f5;border-style:double}.credits::before{backface-visibility:hidden;content:"";position:absolute;background-image:url("../Assets/bg-splash/back-heart.png");background-size:contain;background-repeat:no-repeat;top:5%;left:28%;width:39.25rem;height:39.25rem;z-index:-1;transform:translateZ(3rem) scale(0.95)}.credits::after{backface-visibility:hidden;content:"";position:absolute;top:0;left:19.85rem;background-image:url("../Assets/bg-splash/thin-vine-border.png");width:52.75rem;height:39.25rem;background-size:contain;background-repeat:no-repeat;transform:translateZ(2rem) scaleX(1.725)}.set-game-on-tv{display:flex;align-items:center}#game-canvas{margin:170px 0px 45px 25px;position:relative;width:256px;height:240px;zoom:300%;z-index:-2}.tv{background-image:url(../Assets/bg-splash/cartoon-tv.png);position:absolute;width:1161px;height:1264px;z-index:-1}.begin{background-image:url(../Assets/tileset/start_restart_splash/beginSplash.jpg)}.end{background-image:url(../Assets/tileset/start_restart_splash/endSplash.jpg)}.win{background-image:url(../Assets/tileset/start_restart_splash/win_screen.png)}.body{background-image:url(../Assets/bg-splash/blue-orange-spec-tri.png);margin:0 0;padding:0 0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}.canvas-instructions{display:flex;justify-content:flex-start;align-items:center}#instructions-bg{background-color:#000;border-radius:10px;max-width:20%;min-width:5%;padding:50px 15px 50px 15px;margin-left:1%;margin-top:10%;display:flex;flex-direction:column;height:fit-content;overflow:hidden}#instructions{font-family:"Press Start 2P",cursive;color:#fff;font-size:1.25vw;font-weight:900;max-width:550px;padding:10px}.hidden{visibility:collapse}.nes-scale{display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%}.console-scale{display:flex;justify-content:space-evenly;width:100%;height:100%}.nes-spacer{width:40%;height:100%}.controller-spacer{width:11%;height:100%}.nes-system{background-image:url(../Assets/bg-splash/nes.png);width:523px;height:355px;background-size:contain;background-repeat:no-repeat;background-position:center center;margin-top:-60px}.controllers{margin-top:-8vh;margin-bottom:2%;width:100%;display:flex;justify-content:center}.p1-controller{background-image:url(../Assets/bg-splash/p1-nes-controller.png);width:525px;height:420px;background-size:contain;background-repeat:no-repeat;background-position:center center}.p2-controller{background-image:url(../Assets/bg-splash/p2-nes-controller.png);width:560px;height:400px;background-size:contain;background-repeat:no-repeat;background-position:center center}.footer{display:flex;flex-direction:column;justify-content:center;align-items:center;background-color:#000;color:#f5f5f5;width:100vw;border:5px #7e7e7e;border-style:groove;box-shadow:#f5f5f5 0rem 0rem 5rem .025rem,#f5f5f5 0rem 0rem .75rem .025rem inset}.footer .farewell{font-family:"Teko",sans-serif;margin:3vh 2vh;font-size:2.5rem}.footer .farewell .thank-you{font-size:3.5rem}.footer .personal-links{display:flex;justify-content:space-evenly;width:100%;margin-bottom:5vh}.footer .personal-links .link{width:15%}.footer .personal-links i{color:#f5f5f5;width:100%;border-radius:2.5rem;border:thick solid #f5f5f5;border-radius:2.5rem;box-sizing:border-box;font-size:5rem;color:#fff;background-color:#fe6604;box-shadow:#f5f5f5 0rem 0rem .75rem .025rem;transition:.5s;padding:1%}.footer .personal-links i:hover{background-color:#b9caf8;transform:scale(1.1)}@media(min-width: 1550px){.set-game-on-tv{z-index:-1;margin-left:1%}#instructions{font-size:1.5rem}}@media(max-width: 1550px){.calling-card{transform:scale(0.9)}.set-game-on-tv{transform:scale(0.9);z-index:-1;margin-left:0%}#instructions-bg{margin-right:-1%}.canvas-instructions{margin-top:-5%;margin-bottom:-5%}}@media(max-width: 1460px){.calling-card{transform:scale(0.8)}.set-game-on-tv{transform:scale(0.8);z-index:-1;margin-left:-3%}#instructions-bg{margin-right:-2%}.canvas-instructions{margin-top:-10%;margin-bottom:-10%}}@media(max-width: 1375px){.calling-card{transform:scale(0.7)}.set-game-on-tv{transform:scale(0.7);z-index:-1;margin-left:-6%}#instructions-bg{margin-right:-3%}.canvas-instructions{margin-top:-15%;margin-bottom:-15%}}@media(max-width: 1200px){.calling-card{transform:scale(0.6)}.set-game-on-tv{transform:scale(0.6);z-index:-1;margin-left:-7%}#instructions-bg{margin-right:-5%}.canvas-instructions{margin-top:-20%;margin-bottom:-20%}}@media(max-width: 1050px){.calling-card{transform:scale(0.5)}.set-game-on-tv{transform:scale(0.5);z-index:-1;margin-left:-8%}#instructions-bg{margin-right:-7%}.canvas-instructions{margin-top:-25%;margin-bottom:-25%}}html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:"";content:none}table{border-collapse:collapse;border-spacing:0}
+/*!*****************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss (3) ***!
+  \*****************************************************************************************************************************************/
+header {
+  display: flex;
+  justify-content: center;
+}
+header .flip-button {
+  width: 50%;
+  height: 50px;
+  transform-style: preserve-3d;
+  position: relative;
+  transform: translateZ(15rem);
+  color: whitesmoke;
+  border-radius: 2.5rem;
+  border: thick solid whitesmoke;
+  border-radius: 2.5rem;
+  box-sizing: border-box;
+  font-size: 2rem;
+  color: white;
+  background-color: #FE6604;
+  box-shadow: whitesmoke 0rem 0rem 0.75rem 0.025rem;
+  transition: 0.5s;
+}
 
-/*# sourceMappingURL=main.css.map*/
+.calling-card {
+  margin-bottom: -300px;
+  margin-top: 5vh;
+  min-width: 1485px;
+}
+
+.calling-card-content {
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+  transition: 3s;
+  transition-timing-function: ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.flip-card {
+  transform: rotateY(0.5turn);
+}
+
+.title-background {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  border: 1px solid pink;
+  position: relative;
+  perspective: 1000px;
+  background-color: #b9caf8;
+  box-shadow: #ffc3b1 0rem 0rem 2.5rem 0.25rem, #ffc3b1 0rem 0rem 36rem 0rem inset;
+  padding: 50px 50px 0px;
+  border-radius: 10px;
+  z-index: 1;
+}
+.title-background .flip-button:hover {
+  animation-name: button-pulse;
+  animation-duration: 1.25s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes button-pulse {
+  0% {
+    background-color: #FE6604;
+    box-shadow: whitesmoke 0rem 0rem 0.75rem 0.025rem;
+    transform: translateZ(15rem);
+  }
+  50% {
+    background-color: #fa802f;
+    transform: translateZ(15rem) scale(1.05);
+    box-shadow: #fa802f 0rem 0rem 1.5rem 0.25rem;
+  }
+  100% {
+    background-color: #FE6604;
+    box-shadow: whitesmoke 0rem 0rem 0.75rem 0.025rem;
+    transform: translateZ(15rem);
+  }
+}
+.title-background .title-text {
+  backface-visibility: hidden;
+  font-family: "Press Start 2P", cursive;
+  font-size: 2.5rem;
+  text-align: justify;
+  margin-top: 1rem;
+  margin-left: 13.25rem;
+  margin-bottom: -10rem;
+  letter-spacing: -0.2rem;
+  height: 100%;
+  transform: translateZ(5rem);
+}
+.title-background .main-title {
+  backface-visibility: hidden;
+  font-family: "Suez One", serif;
+  height: 100%;
+  font-size: 20rem;
+  transform-origin: 50% 100%;
+  transform: translateZ(12rem) rotateX(30deg);
+  letter-spacing: -0.4rem;
+  color: #FE6604;
+  margin: 5rem 12.75rem 0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title-background .main-title .rel {
+  text-shadow: 5px 4px black, 10px 8px black, 15px 12px black, 20px 16px black, 25px 20px black;
+  height: 100%;
+}
+.title-background .main-title .da {
+  text-shadow: -4px 4px black, -8px 8px black, -12px 12px black, -16px 16px black, -20px 20px black;
+  letter-spacing: -1.85rem;
+  height: 100%;
+}
+.title-background .sword-container {
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem 0 3rem;
+  transform: translateZ(6rem);
+}
+.title-background .sword-underline {
+  background-image: url("../Assets/bg-splash/buster-sword.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 80%;
+  height: 210px;
+  transform: scale(0.9);
+}
+
+.title-background::before {
+  backface-visibility: hidden;
+  content: "";
+  position: absolute;
+  background-image: url("../Assets/bg-splash/back-heart.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 5%;
+  left: 28%;
+  width: 39.25rem;
+  height: 39.25rem;
+  z-index: -1;
+  transform: translateZ(3rem) scale(0.95);
+}
+
+.title-background::after {
+  backface-visibility: hidden;
+  content: "";
+  position: absolute;
+  top: 1.75rem;
+  left: 19.85rem;
+  background-image: url("../Assets/bg-splash/thin-vine-border.png");
+  width: 52.75rem;
+  height: 39.25rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: translateZ(2rem) scaleX(1.725) scaleY(1.075);
+}
+
+.credits {
+  transform: rotateY(0.5turn);
+  position: absolute;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  border: 1px solid pink;
+  perspective: 1000px;
+  background-color: #061B21;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  box-shadow: #ffc3b1 0rem 0rem 2.5rem 0.25rem, #ffc3b1 0rem 0rem 36rem 0rem inset;
+  padding: 50px 50px 0px;
+  border-radius: 10px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+}
+.credits .flip-button:hover {
+  background-color: #fa802f;
+  transform: translateZ(15rem) scale(1.05);
+  box-shadow: #fa802f 0rem 0rem 1.5rem 0.25rem;
+}
+.credits .first-name {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  backface-visibility: hidden;
+  transform: translateZ(5rem);
+  margin-bottom: -10rem;
+}
+.credits .name-text {
+  font-family: "Press Start 2P", cursive;
+  font-size: 2.5rem;
+  letter-spacing: -0.2rem;
+  height: 100%;
+  display: flex;
+  margin-top: 1.35rem;
+}
+.credits .dustin {
+  backface-visibility: hidden;
+  font-family: "Suez One", serif;
+  font-size: 4rem;
+  letter-spacing: -0.2rem;
+  color: #FE6604;
+  text-shadow: 2px 2px whitesmoke;
+}
+.credits .last-name {
+  backface-visibility: hidden;
+  font-family: "Suez One", serif;
+  font-size: 19rem;
+  transform-origin: 50% 100%;
+  transform: translateZ(12rem) rotateX(30deg);
+  letter-spacing: -0.4rem;
+  color: #FE6604;
+  margin: 5rem 12.75rem 0rem;
+  width: 100%;
+}
+.credits .last-name .ad {
+  margin-right: 0rem;
+  text-shadow: 5px 4px whitesmoke, 10px 8px whitesmoke, 15px 12px whitesmoke, 20px 16px whitesmoke, 25px 20px whitesmoke;
+  height: 100%;
+}
+.credits .last-name .ler {
+  margin-left: -2.8rem;
+  text-shadow: -4px 4px whitesmoke, -8px 8px whitesmoke, -12px 12px whitesmoke, -16px 16px whitesmoke, -20px 20px whitesmoke;
+  height: 100%;
+}
+.credits .projects-container {
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 1.5rem 0 3rem;
+  transform: translateZ(6rem);
+  width: 80%;
+}
+.credits a {
+  box-sizing: border-box;
+  border-radius: 8px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 40%;
+  height: 180px;
+  transition: 0.5s;
+}
+.credits a:hover {
+  animation-name: link-pulse;
+  animation-duration: 1.25s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes link-pulse {
+  50% {
+    transform: scale(1.025);
+    box-shadow: whitesmoke 0rem 0rem 1.5rem 0.25rem;
+  }
+}
+.credits .mern {
+  background-image: url("../Assets/bg-splash/cwm-logo.png");
+  background-color: lightblue;
+  border: medium solid white;
+}
+.credits .full-stack {
+  background-image: url("../Assets/bg-splash/craftesy.png");
+  background-color: #161436;
+  border: 10px solid whitesmoke;
+  border-style: double;
+}
+
+.credits::before {
+  backface-visibility: hidden;
+  content: "";
+  position: absolute;
+  background-image: url("../Assets/bg-splash/back-heart.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 5%;
+  left: 28%;
+  width: 39.25rem;
+  height: 39.25rem;
+  z-index: -1;
+  transform: translateZ(3rem) scale(0.95);
+}
+
+.credits::after {
+  backface-visibility: hidden;
+  content: "";
+  position: absolute;
+  top: 1.75rem;
+  left: 19.85rem;
+  background-image: url("../Assets/bg-splash/thin-vine-border.png");
+  width: 52.75rem;
+  height: 39.25rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: translateZ(2rem) scaleX(1.725) scaleY(1.075);
+}
+
+.set-game-on-tv {
+  display: flex;
+  align-items: center;
+}
+
+#game-canvas {
+  margin: 170px 0px 45px 25px;
+  position: relative;
+  width: 256px;
+  height: 240px;
+  zoom: 300%;
+  z-index: -2;
+}
+
+.tv {
+  background-image: url(../Assets/bg-splash/cartoon-tv.png);
+  position: absolute;
+  width: 1161px;
+  height: 1264px;
+  z-index: -1;
+}
+
+.begin {
+  background-image: url(../Assets/tileset/start_restart_splash/beginSplash.jpg);
+}
+
+.end {
+  background-image: url(../Assets/tileset/start_restart_splash/endSplash.jpg);
+}
+
+.win {
+  background-image: url(../Assets/tileset/start_restart_splash/win_screen.png);
+}
+
+.body {
+  background-image: url(../Assets/bg-splash/blue-orange-spec-tri.png);
+  margin: 0 0;
+  padding: 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.canvas-instructions {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#instructions-bg {
+  background-color: black;
+  border-radius: 10px;
+  max-width: 20%;
+  min-width: 5%;
+  padding: 50px 15px 50px 15px;
+  margin-left: 1%;
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  overflow: hidden;
+}
+
+#instructions {
+  font-family: "Press Start 2P", cursive;
+  color: white;
+  font-size: 1.25vw;
+  font-weight: 900;
+  max-width: 550px;
+  padding: 10px;
+}
+
+.hidden {
+  visibility: collapse;
+}
+
+.nes-scale {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.console-scale {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+}
+
+.nes-spacer {
+  width: 40%;
+  height: 100%;
+}
+
+.controller-spacer {
+  width: 11%;
+  height: 100%;
+}
+
+.nes-system {
+  background-image: url(../Assets/bg-splash/nes.png);
+  width: 523px;
+  height: 355px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-top: -60px;
+}
+
+.controllers {
+  margin-top: -8vh;
+  margin-bottom: 2%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.p1-controller {
+  background-image: url(../Assets/bg-splash/p1-nes-controller.png);
+  width: 525px;
+  height: 420px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.p2-controller {
+  background-image: url(../Assets/bg-splash/p2-nes-controller.png);
+  width: 560px;
+  height: 400px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: whitesmoke;
+  width: 100vw;
+  border: 5px #7e7e7e;
+  border-style: groove;
+  box-shadow: whitesmoke 0rem 0rem 5rem 0.025rem, whitesmoke 0rem 0rem 0.75rem 0.025rem inset;
+}
+.footer .farewell {
+  font-family: "Teko", sans-serif;
+  margin: 3vh 2vh;
+  font-size: 2.5rem;
+}
+.footer .farewell .thank-you {
+  font-size: 3.5rem;
+}
+.footer .personal-links {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-bottom: 5vh;
+}
+.footer .personal-links .link {
+  width: 15%;
+}
+.footer .personal-links i {
+  color: whitesmoke;
+  width: 100%;
+  border-radius: 2.5rem;
+  border: thick solid whitesmoke;
+  border-radius: 2.5rem;
+  box-sizing: border-box;
+  font-size: 5rem;
+  color: whitesmoke;
+  background-color: #FE6604;
+  box-shadow: whitesmoke 0rem 0rem 0.75rem 0.025rem;
+  padding: 1%;
+}
+.footer .personal-links i:hover {
+  animation: pro-links 1.75s ease-in-out 0s infinite;
+}
+@keyframes pro-links {
+  0% {
+    background-color: #FE6604;
+    box-shadow: whitesmoke 0rem 0rem 0.75rem 0.025rem;
+    color: whitesmoke;
+  }
+  50% {
+    background-color: #B9CAF8;
+    transform: scale(1.05);
+    box-shadow: #B9CAF8 0rem 0rem 1.25rem 0.25rem;
+    color: white;
+  }
+  100% {
+    background-color: #FE6604;
+    box-shadow: whitesmoke 0rem 0rem 0.75rem 0.025rem;
+    color: whitesmoke;
+  }
+}
+
+@media (min-width: 1550px) {
+  .set-game-on-tv {
+    z-index: -1;
+    margin-left: 1%;
+  }
+
+  #instructions {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 1550px) {
+  .calling-card {
+    transform: scale(0.9);
+  }
+
+  .set-game-on-tv {
+    transform: scale(0.9);
+    z-index: -1;
+    margin-left: 0%;
+  }
+
+  #instructions-bg {
+    margin-right: -1%;
+  }
+
+  .canvas-instructions {
+    margin-top: -5%;
+    margin-bottom: -5%;
+  }
+}
+@media (max-width: 1460px) {
+  .calling-card {
+    transform: scale(0.8);
+  }
+
+  .set-game-on-tv {
+    transform: scale(0.8);
+    z-index: -1;
+    margin-left: -3%;
+  }
+
+  #instructions-bg {
+    margin-right: -2%;
+  }
+
+  .canvas-instructions {
+    margin-top: -10%;
+    margin-bottom: -10%;
+  }
+}
+@media (max-width: 1375px) {
+  .calling-card {
+    transform: scale(0.7);
+  }
+
+  .set-game-on-tv {
+    transform: scale(0.7);
+    z-index: -1;
+    margin-left: -6%;
+  }
+
+  #instructions-bg {
+    margin-right: -3%;
+  }
+
+  .canvas-instructions {
+    margin-top: -15%;
+    margin-bottom: -15%;
+  }
+}
+@media (max-width: 1200px) {
+  .calling-card {
+    transform: scale(0.6);
+  }
+
+  .set-game-on-tv {
+    transform: scale(0.6);
+    z-index: -1;
+    margin-left: -7%;
+  }
+
+  #instructions-bg {
+    margin-right: -5%;
+  }
+
+  .canvas-instructions {
+    margin-top: -20%;
+    margin-bottom: -20%;
+  }
+}
+@media (max-width: 1050px) {
+  .calling-card {
+    transform: scale(0.5);
+  }
+
+  .set-game-on-tv {
+    transform: scale(0.5);
+    z-index: -1;
+    margin-left: -8%;
+  }
+
+  #instructions-bg {
+    margin-right: -7%;
+  }
+
+  .canvas-instructions {
+    margin-top: -25%;
+    margin-bottom: -25%;
+  }
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
