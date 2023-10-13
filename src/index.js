@@ -39,8 +39,7 @@ addEventListener('DOMContentLoaded', function() {
     flipButton.forEach(button => {
         button.addEventListener("click", event => {
             callingCardContent[0].classList.toggle('flip-card');
-            if (callingCardContent[0].classList.contains('flip-card')) sounds.fanfareSound();
-            // sounds.revealItemSound();
+            callingCardContent[0].classList.contains('flip-card') ? sounds.fanfareSound() : sounds.reverseFanfareSound();
         })
     });
 })

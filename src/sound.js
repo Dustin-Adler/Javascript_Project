@@ -16,6 +16,8 @@ class Sound {
         this.take_dmg.src = "./Assets/sound/take_dmg.wav"
         this.deathScreen = new Audio();
         this.deathScreen.src = "./Assets/sound/ganon_laugh.wav"
+        this.reverseFanfare = new Audio();
+        this.reverseFanfare.src = "./Assets/sound/reverse-fanfare.wav"
     }
 
     pauseAllSounds() {
@@ -57,6 +59,10 @@ class Sound {
 
     fanfareSound() {
         this.fanfare.play();
+    }
+
+    reverseFanfareSound() {
+        this.reverseFanfare.play();
     }
 
     revealItemSound() {
